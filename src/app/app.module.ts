@@ -1,0 +1,69 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { SelezionaprogettoPage } from "../pages/selezionaprogetto/selezionaprogetto";
+import { HomeProgettoPage } from '../pages/home-progetto/home-progetto';
+import { CreaProgettoPage } from '../pages/crea-progetto/crea-progetto';
+import { AggiungimemberPage } from '../pages/aggiungimember/aggiungimember';
+import { CreaTaskPage } from '../pages/crea-task/crea-task';
+import { AssegnaTaskPage } from '../pages/assegna-task/assegna-task';
+import { AssegnaTaskPersonaPage } from '../pages/assegna-task-persona/assegna-task-persona';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { IonicStorageModule } from '@ionic/storage';
+
+
+@NgModule({
+  declarations: [
+      MyApp,
+      HomePage,
+      ListPage,
+      WelcomePage,
+      LoginPage,
+      SignupPage,
+      SelezionaprogettoPage,
+      HomeProgettoPage,
+      CreaProgettoPage,
+      AggiungimemberPage,
+      CreaTaskPage,
+      AssegnaTaskPage,
+      AssegnaTaskPersonaPage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+      MyApp,
+      HomePage,
+      ListPage,
+      WelcomePage,
+      LoginPage,
+      SignupPage,
+      SelezionaprogettoPage,
+      HomeProgettoPage,
+      CreaProgettoPage,
+      AggiungimemberPage,
+      CreaTaskPage,
+      AssegnaTaskPage,
+      AssegnaTaskPersonaPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}

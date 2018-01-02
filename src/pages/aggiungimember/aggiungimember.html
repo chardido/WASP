@@ -24,10 +24,10 @@
     </p>
 
     <ion-list>
-      <ion-item (click)="aggiungiUtente(utente.username)" *ngFor="let utente of utenti">
+      <button ion-item (click)="aggiungiUtente(utente.username)" *ngFor="let utente of utenti">
         <h2> <strong>{{ utente.username }} </strong></h2>
         <h3> {{ utente.nome }} </h3>
-      </ion-item>
+      </button>
     </ion-list>
 
   </div>

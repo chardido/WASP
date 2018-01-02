@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {AssegnaTaskPersonaPage} from "../assegna-task-persona/assegna-task-persona";
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the AssegnaTaskPage page.
@@ -18,7 +19,9 @@ export class AssegnaTaskPage {
   private tasks: { nome: string, descrizione: string }[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+    setTimeout(this.checkProgettoSelezionato(), 1000);
+
 
     /*
      I tasks verranno presi tramite chiamata GET
@@ -30,6 +33,16 @@ export class AssegnaTaskPage {
       { "nome": "Task3", "descrizione": "Questo è il task numero 3" }
     ];
   }
+
+  checkProgettoSelezionato(){
+    this.storage.get('progetto').then((progetto) => {
+      if (progetto == null) {
+        console.log("Seleziona il progetto prima di procedere");
+        this.navCtrl.setRoot(SelezionaprogettoPage);
+      }
+    });
+  }
+
 
   //todo - al posto del task gli sarà passato l'id
   assegnaTask(task: string){

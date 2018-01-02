@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the AggiungimemberPage page.
@@ -27,7 +28,7 @@ export class AggiungimemberPage {
   progetto: Progetto;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController) {
     this.utenti = [
       { "nome": "Carlo Di Domenico", "username": "chardido" },
       { "nome": "Fabiano Pecorelli", "username": "fabianopecorelli" },
@@ -71,6 +72,15 @@ export class AggiungimemberPage {
   }
 
   aggiungiUtente(username: string){
+
+    let alert = this.alertControl.create({
+      title: 'Utente aggiunto',
+      subTitle: username+ ' è stato aggiunto al team.',
+      buttons: ['Continua']
+    });
+    alert.present();
     console.log("Aggiungo: "+username+" al progetto: "+this.progetto.nome)
   }
+
+
 }

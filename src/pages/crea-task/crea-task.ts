@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
 
 /**
  * Generated class for the CreaTaskPage page.
@@ -24,11 +25,28 @@ export class CreaTaskPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController) {
+    setTimeout(this.checkProgettoSelezionato(), 1000);
   }
+
+  checkProgettoSelezionato(){
+    this.storage.get('progetto').then((progetto) => {
+      if (progetto == null) {
+        console.log("Seleziona il progetto prima di procedere");
+        this.navCtrl.setRoot(SelezionaprogettoPage);
+      }
+    });
+  }
+
 
   creaTask(){
     if(this.task.nome != "" && this.task.descrizione != ""){
+      let alert = this.alertControl.create({
+        title: 'Task Creato',
+        subTitle: 'Il task è stato creato correttamente.',
+        buttons: ['Continua']
+      });
+      alert.present();
       console.log("Nuovo task: "+this.task.nome+ "; Descrizione: "+this.task.descrizione);
     }
 

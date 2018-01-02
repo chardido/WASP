@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 
 /**
  * Generated class for the AssegnaTaskPersonaPage page.
@@ -17,7 +17,7 @@ export class AssegnaTaskPersonaPage {
   private utenti: { nome: string, username: string, costoG: number}[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertControl: AlertController) {
     this.utenti = [
       { "nome": "Carlo Di Domenico", "username": "chardido", "costoG": 400 },
       { "nome": "Fabiano Pecorelli", "username": "fabianopecorelli", "costoG": 300 },
@@ -27,6 +27,14 @@ export class AssegnaTaskPersonaPage {
 
   assegnaTask(username: string){
     var nomeTask = this.navParams.get("task");
+
+    let alert = this.alertControl.create({
+      title: 'Task Assegnato',
+      subTitle: 'Il task '+nomeTask+' stato assegnato a '+username+'.',
+      buttons: ['Continua']
+    });
+    alert.present();
+
     console.log("Task: "+nomeTask+" assegnato a: "+username);
   }
 

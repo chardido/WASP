@@ -15,6 +15,11 @@ import { AggiungimemberPage } from '../pages/aggiungimember/aggiungimember';
 import { CreaTaskPage } from '../pages/crea-task/crea-task';
 import { AssegnaTaskPage } from '../pages/assegna-task/assegna-task';
 import { AssegnaTaskPersonaPage } from '../pages/assegna-task-persona/assegna-task-persona';
+import { ModificaBudgetPage } from '../pages/modifica-budget/modifica-budget';
+import { ModificaRisorsaPage } from '../pages/modifica-risorsa/modifica-risorsa';
+import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-members';
+import { ProfiloMemberPage } from '../pages/profilo-member/profilo-member';
+import { ModificaRicavoRisorsaPage } from '../pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -37,7 +42,12 @@ import { IonicStorageModule } from '@ionic/storage';
       AggiungimemberPage,
       CreaTaskPage,
       AssegnaTaskPage,
-      AssegnaTaskPersonaPage
+      AssegnaTaskPersonaPage,
+      ModificaBudgetPage,
+      ModificaRisorsaPage,
+      VisualizzaMembersPage,
+      ProfiloMemberPage,
+      ModificaRicavoRisorsaPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,12 @@ import { IonicStorageModule } from '@ionic/storage';
       AggiungimemberPage,
       CreaTaskPage,
       AssegnaTaskPage,
-      AssegnaTaskPersonaPage
+      AssegnaTaskPersonaPage,
+      ModificaBudgetPage,
+      ModificaRisorsaPage,
+      VisualizzaMembersPage,
+      ProfiloMemberPage,
+      ModificaRicavoRisorsaPage
   ],
   providers: [
     StatusBar,

@@ -3,19 +3,16 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { LoginPage } from '../pages/login/login';
-import { SignupPage } from '../pages/signup/signup';
 import { Storage } from '@ionic/storage';
-import {SelezionaprogettoPage} from "../pages/selezionaprogetto/selezionaprogetto";
+import { SelezionaprogettoPage } from "../pages/selezionaprogetto/selezionaprogetto";
 import { HomeProgettoPage } from '../pages/home-progetto/home-progetto';
 import { CreaProgettoPage } from '../pages/crea-progetto/crea-progetto';
 import { AggiungimemberPage } from '../pages/aggiungimember/aggiungimember';
 import { CreaTaskPage } from '../pages/crea-task/crea-task';
 import { AssegnaTaskPage } from '../pages/assegna-task/assegna-task';
-import { AssegnaTaskPersonaPage } from '../pages/assegna-task-persona/assegna-task-persona';
+import { ModificaBudgetPage } from '../pages/modifica-budget/modifica-budget';
+import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-members';
 
 
 
@@ -40,6 +37,8 @@ export class MyApp {
       { title: 'Aggiungi Team Member', component: AggiungimemberPage, icon: 'ios-person-add-outline'},
       { title: 'Crea Task', component: CreaTaskPage, icon: 'ios-add-outline'},
       { title: 'Assegna Task', component: AssegnaTaskPage, icon: 'ios-person-add-outline'},
+      { title: 'Visualizza Members', component: VisualizzaMembersPage, icon: 'ios-people-outline'},
+      { title: 'Modifica Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
     ];
 
     this.pagesGenerale = [

@@ -21,7 +21,7 @@ export class AssegnaTaskPersonaPage {
     this.utenti = [
       { "nome": "Carlo Di Domenico", "username": "chardido", "costoG": 400 },
       { "nome": "Fabiano Pecorelli", "username": "fabianopecorelli", "costoG": 300 },
-      { "nome": "Umberto Picariello", "username": "umbertopic", "costoG" : 200 }
+      { "nome": "Umberto Picariello", "username": "umbertopic", "costoG" : 300 }
     ];
   }
 

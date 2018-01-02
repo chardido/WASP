@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ProfiloMemberPage} from "../profilo-member/profilo-member";
 import { Storage } from '@ionic/storage';
+import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
 
 /**
  * Generated class for the VisualizzaMembersPage page.
@@ -26,7 +27,7 @@ export class VisualizzaMembersPage {
     this.utenti = [
       { "nome": "Carlo Di Domenico", "username": "chardido", "ruolo": "Team Manager","costoG": 1200, "ricavoG": 1400 },
       { "nome": "Fabiano Pecorelli", "username": "fabianopecorelli", "ruolo": "Team Member", "costoG": 300, "ricavoG": 350 },
-      { "nome": "Umberto Picariello", "username": "umbertopic", "ruolo": "Team Member", "costoG" : 200, "ricavoG": 400 }
+      { "nome": "Umberto Picariello", "username": "umbertopic", "ruolo": "Team Member", "costoG" : 300, "ricavoG": 400 }
     ];
 
   }

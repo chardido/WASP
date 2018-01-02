@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {AssegnaTaskPersonaPage} from "../assegna-task-persona/assegna-task-persona";
 import { Storage } from '@ionic/storage';
+import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
 
 /**
  * Generated class for the AssegnaTaskPage page.

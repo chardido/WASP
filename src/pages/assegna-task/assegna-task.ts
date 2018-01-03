@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {AssegnaTaskPersonaPage} from "../assegna-task-persona/assegna-task-persona";
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
+import {Http, Headers, RequestOptions} from '@angular/http';
+import 'rxjs/add/operator/map';
+import {HomePage} from "../home/home";
+import {HomeTmPage} from "../home-tm/home-tm";
 
 /**
  * Generated class for the AssegnaTaskPage page.
@@ -17,22 +21,20 @@ import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
   templateUrl: 'assegna-task.html',
 })
 export class AssegnaTaskPage {
-  private tasks: { nome: string, descrizione: string }[];
+  private tasks: { attivita: string, dataInizio: string }[];
+  codiceProgetto: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
-    setTimeout(this.checkProgettoSelezionato(), 1000);
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
 
 
-    /*
-     I tasks verranno presi tramite chiamata GET
-     */
+      this.storage.get('codProgetto').then((codice) => {
+          this.codiceProgetto = codice;
+          this.chiamataPost(codice);
+      });
 
-    this.tasks = [
-      { "nome": "Task1", "descrizione": "Questo è il task numero 1" },
-      { "nome": "Task2", "descrizione": "Questo è il task numero 2" },
-      { "nome": "Task3", "descrizione": "Questo è il task numero 3" }
-    ];
+      setTimeout(this.checkProgettoSelezionato(), 1000);
+
   }
 
   checkProgettoSelezionato(){
@@ -42,6 +44,26 @@ export class AssegnaTaskPage {
         this.navCtrl.setRoot(SelezionaprogettoPage);
       }
     });
+  }
+
+  chiamataPost(codiceP: string){
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/json' );
+      headers.append('Access-Control-Allow-Origin' , '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      let options = new RequestOptions({ headers:headers});
+
+      let postParams = {
+          codice: this.codiceProgetto,
+      }
+
+      this.http.post("http://localhost:8888/WASP/apiListaTasks.php", postParams, options).map(res => res.json())
+          .subscribe(data => {
+              this.tasks = data;
+          }, error => {
+              console.log(error);// Error getting the data
+          });
   }
 
 

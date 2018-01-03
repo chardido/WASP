@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
 import { AlertController } from 'ionic-angular';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the AggiungimemberPage page.
@@ -24,16 +26,17 @@ export interface Progetto {
   templateUrl: 'aggiungimember.html',
 })
 export class AggiungimemberPage {
-  private utenti: { nome: string, username: string}[];
+  private utenti: { nome: string, cognome: string, username: string}[];
   progetto: Progetto;
+  codiceProgetto: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController) {
-    this.utenti = [
-      { "nome": "Carlo Di Domenico", "username": "chardido" },
-      { "nome": "Fabiano Pecorelli", "username": "fabianopecorelli" },
-      { "nome": "Umberto Picariello", "username": "umbertopic" }
-    ];
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController, public http: Http) {
+
+      this.storage.get('codProgetto').then((codice) => {
+          this.codiceProgetto = codice;
+          this.chiamataGet();
+      });
 
     setTimeout(this.checkProgettoSelezionato(), 1000);
 
@@ -58,6 +61,16 @@ export class AggiungimemberPage {
     });
 
   }
+
+    chiamataGet(){
+
+        this.http.get("http://localhost:8888/WASP/apiListaTeamMember.php").map(res => res.json())
+            .subscribe(data => {
+                this.utenti = data;
+            }, error => {
+                console.log(error);// Error getting the data
+            });
+    }
 
   checkProgettoSelezionato(){
     this.storage.get('progetto').then((progetto) => {

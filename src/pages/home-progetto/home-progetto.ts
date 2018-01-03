@@ -31,10 +31,9 @@ export class HomeProgettoPage {
       this.codiceProgetto = codice;
     });
 
+
     this.nomeProgetto = navParams.get("nome");
     this.codiceProgetto = navParams.get("codice");
-    console.log(navParams.get("nome"));
-    console.log(navParams.get("codice"));
 
     setTimeout(this.checkProgettoSelezionato(), 1000);
 

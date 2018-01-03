@@ -54,6 +54,15 @@
   <ion-content>
     <ion-list>
       <ion-list-header>
+        Progetto
+      </ion-list-header>
+      <button menuClose ion-item *ngFor="let p of pagesProgettoTM" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
         Impostazioni
       </ion-list-header>
       <button menuClose ion-item *ngFor="let p of pagesImpostazioni" (click)="openPage(p)">

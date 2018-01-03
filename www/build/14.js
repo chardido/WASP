@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 292:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AggiungimemberPageModule", function() { return AggiungimemberPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreaProgettoPageModule", function() { return CreaProgettoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aggiungimember__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crea_progetto__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AggiungimemberPageModule = (function () {
-    function AggiungimemberPageModule() {
+var CreaProgettoPageModule = (function () {
+    function CreaProgettoPageModule() {
     }
-    AggiungimemberPageModule = __decorate([
+    CreaProgettoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__aggiungimember__["a" /* AggiungimemberPage */],
+                __WEBPACK_IMPORTED_MODULE_2__crea_progetto__["a" /* CreaProgettoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__aggiungimember__["a" /* AggiungimemberPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__crea_progetto__["a" /* CreaProgettoPage */]),
             ],
         })
-    ], AggiungimemberPageModule);
-    return AggiungimemberPageModule;
+    ], CreaProgettoPageModule);
+    return CreaProgettoPageModule;
 }());
 
-//# sourceMappingURL=aggiungimember.module.js.map
+//# sourceMappingURL=crea-progetto.module.js.map
 
 /***/ })
 

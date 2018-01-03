@@ -20,6 +20,9 @@ import { ModificaRisorsaPage } from '../pages/modifica-risorsa/modifica-risorsa'
 import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-members';
 import { ProfiloMemberPage } from '../pages/profilo-member/profilo-member';
 import { ModificaRicavoRisorsaPage } from '../pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa';
+import { InvioOreSelTaskPage } from '../pages/invio-ore-sel-task/invio-ore-sel-task';
+import { InvioOrePage } from '../pages/invio-ore/invio-ore';
+import { HomeTmPage } from '../pages/home-tm/home-tm';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -48,7 +51,10 @@ import { HttpModule } from '@angular/http';
       ModificaRisorsaPage,
       VisualizzaMembersPage,
       ProfiloMemberPage,
-      ModificaRicavoRisorsaPage
+      ModificaRicavoRisorsaPage,
+      InvioOreSelTaskPage,
+      InvioOrePage,
+      HomeTmPage
   ],
   imports: [
     HttpModule,
@@ -75,7 +81,10 @@ import { HttpModule } from '@angular/http';
       ModificaRisorsaPage,
       VisualizzaMembersPage,
       ProfiloMemberPage,
-      ModificaRicavoRisorsaPage
+      ModificaRicavoRisorsaPage,
+      InvioOreSelTaskPage,
+      InvioOrePage,
+      HomeTmPage
   ],
   providers: [
     StatusBar,

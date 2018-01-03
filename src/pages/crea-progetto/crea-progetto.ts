@@ -23,7 +23,6 @@ export class CreaProgettoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
     this.storage.get('username').then((val) => {
-      console.log('localstorage gave me ' + val);
       this.userDaPassare= val;
     });
   }

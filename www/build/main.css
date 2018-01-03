@@ -27987,6 +27987,12 @@ textarea {
   width: 100%;
 }
 
+page-home-progetto .colora {
+  color: blue;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .bottoni-progetto {
   width: 100%;
   font-size: 12px;

@@ -19,29 +19,35 @@ import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
 export class HomeProgettoPage {
 
   nomeProgetto: string;
-  codiceProgetto: string
+  codiceProgetto: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
+    this.storage.get('progetto').then((progetto) => {
+      this.nomeProgetto = progetto;
+    });
+
+    this.storage.get('codProgetto').then((codice) => {
+      this.codiceProgetto = codice;
+    });
+
     this.nomeProgetto = navParams.get("nome");
+    this.codiceProgetto = navParams.get("codice");
     console.log(navParams.get("nome"));
+    console.log(navParams.get("codice"));
 
     setTimeout(this.checkProgettoSelezionato(), 1000);
-
-
 
   }
 
   checkProgettoSelezionato(){
-    this.storage.get('progetto').then((progetto) => {
-      if (progetto == null && this.nomeProgetto == null) {
+
+      if (this.nomeProgetto == null) {
         console.log("NON HAI SCELTO");
         this.navCtrl.setRoot(SelezionaprogettoPage);
       } else {
-        this.nomeProgetto = progetto;
-        console.log("Progetto aperto: "+progetto);
+        console.log("Progetto aperto: "+ this.nomeProgetto + ", codice: " + this.codiceProgetto);
       }
-    });
   }
 
 

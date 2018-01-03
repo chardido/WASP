@@ -51,10 +51,6 @@ export class MyApp {
     { title: 'Logout', component: WelcomePage, icon: 'log-out', logsOut: true }
   ];
 
-  pagesProgetto: Array<{title: string, component: any, icon: string}>;
-  pagesUtente: Array<{title: string, component: any, icon: string}>;
-  pagesGenerale: Array<{title: string, component: any, icon: string}>;
-  pagesImpostazioni: Array<{title: string, component: any, icon: string, logsOut?: boolean}>;
 
   constructor(
       public platform: Platform,

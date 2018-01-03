@@ -46,9 +46,14 @@ export class LoginPage {
 
       this.http.post("http://localhost:8888/WASP/apiLogin.php", postParams, options)
         .subscribe(data => {
-          if(data['_body']==1){
+          if(data['_body']=="PM"){
               this.storage.set('username',this.login.username);
+              this.storage.set('posizione',"PM");
               this.navCtrl.setRoot(HomePage);
+          }else if(data['_body']=="TM"){
+            this.storage.set('username',this.login.username);
+            this.storage.set('posizione',"TM");
+            this.navCtrl.setRoot(HomePage);
           }else{
             console.log("Inserisci username e/o password CORRETTI");
           }

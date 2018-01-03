@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 306:
+/***/ 483:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WelcomePageModule", function() { return WelcomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelezionaprogettoPageModule", function() { return SelezionaprogettoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__welcome__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__selezionaprogetto__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var WelcomePageModule = (function () {
-    function WelcomePageModule() {
+var SelezionaprogettoPageModule = (function () {
+    function SelezionaprogettoPageModule() {
     }
-    WelcomePageModule = __decorate([
+    SelezionaprogettoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__welcome__["a" /* WelcomePage */],
+                __WEBPACK_IMPORTED_MODULE_2__selezionaprogetto__["a" /* SelezionaprogettoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__welcome__["a" /* WelcomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__selezionaprogetto__["a" /* SelezionaprogettoPage */]),
             ],
         })
-    ], WelcomePageModule);
-    return WelcomePageModule;
+    ], SelezionaprogettoPageModule);
+    return SelezionaprogettoPageModule;
 }());
 
-//# sourceMappingURL=welcome.module.js.map
+//# sourceMappingURL=selezionaprogetto.module.js.map
 
 /***/ })
 

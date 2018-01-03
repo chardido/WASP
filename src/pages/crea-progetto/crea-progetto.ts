@@ -23,7 +23,6 @@ export class CreaProgettoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
     this.storage.get('username').then((val) => {
-      console.log('localstorage gave me ' + val);
       this.userDaPassare= val;
     });
   }
@@ -42,7 +41,7 @@ export class CreaProgettoPage {
       user: this.userDaPassare
     }
 
-    this.http.post("http://localhost:8888/WASP/apiCreaProgetto.php", postParams, options)
+    this.http.post("http://localhost:80/WASP/apiCreaProgetto.php", postParams, options)
       .subscribe(data => {
         if(data['_body']=="0"){
             console.log("Progetto non creato!");

@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
@@ -33,8 +33,17 @@ export class HomeProgettoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
+
+    this.storage.get('progetto').then((progetto) => {
+      this.nomeProgetto = progetto;
+    });
+
+    this.storage.get('codProgetto').then((codice) => {
+      this.codiceProgetto = codice;
+    });
+
     this.nomeProgetto = navParams.get("nome");
-    console.log(navParams.get("nome"));
+    this.codiceProgetto = navParams.get("codice");
 
     setTimeout(this.checkProgettoSelezionato(), 1000);
 

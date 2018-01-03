@@ -57,7 +57,7 @@ export class LoginPage {
           }else{
             console.log("Inserisci username e/o password CORRETTI");
           }
-          //console.log(data);
+          console.log(data);
          }, error => {
           console.log(error);// Error getting the data
         });

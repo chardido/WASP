@@ -36,7 +36,6 @@ export class SelezionaprogettoPage {
         headers.append('Content-Type', 'application/json' );
         headers.append('Access-Control-Allow-Origin' , '*');
         headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-
         this.http.get("http://localhost:80/WASP/apiListaProgetti.php", {}, {}).map(res => res.json())
             .subscribe(data => {
                 this.progetti = data;

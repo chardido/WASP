@@ -16,6 +16,7 @@ import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-me
 import { InvioOreSelTaskPage } from '../pages/invio-ore-sel-task/invio-ore-sel-task';
 import { HomeTmPage } from '../pages/home-tm/home-tm';
 import {HomePage} from "../pages/home/home";
+import { DettaglioTaskPage } from "../pages/dettaglio-task/dettaglio-task";
 
 export interface PageInterface {
   title: string;

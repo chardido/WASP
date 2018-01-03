@@ -23,6 +23,7 @@ import { ModificaRicavoRisorsaPage } from '../pages/modifica-ricavo-risorsa/modi
 import { InvioOreSelTaskPage } from '../pages/invio-ore-sel-task/invio-ore-sel-task';
 import { InvioOrePage } from '../pages/invio-ore/invio-ore';
 import { HomeTmPage } from '../pages/home-tm/home-tm';
+import { DettaglioTaskPage } from "../pages/dettaglio-task/dettaglio-task";
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -54,7 +55,8 @@ import { HttpModule } from '@angular/http';
       ModificaRicavoRisorsaPage,
       InvioOreSelTaskPage,
       InvioOrePage,
-      HomeTmPage
+      HomeTmPage,
+      DettaglioTaskPage
   ],
   imports: [
     HttpModule,
@@ -84,7 +86,8 @@ import { HttpModule } from '@angular/http';
       ModificaRicavoRisorsaPage,
       InvioOreSelTaskPage,
       InvioOrePage,
-      HomeTmPage
+      HomeTmPage,
+      DettaglioTaskPage
   ],
   providers: [
     StatusBar,

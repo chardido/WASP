@@ -13,6 +13,9 @@ import { CreaTaskPage } from '../pages/crea-task/crea-task';
 import { AssegnaTaskPage } from '../pages/assegna-task/assegna-task';
 import { ModificaBudgetPage } from '../pages/modifica-budget/modifica-budget';
 import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-members';
+import { InvioOreSelTaskPage } from '../pages/invio-ore-sel-task/invio-ore-sel-task';
+import { HomeTmPage } from '../pages/home-tm/home-tm';
+import {HomePage} from "../pages/home/home";
 
 export interface PageInterface {
   title: string;
@@ -34,7 +37,7 @@ export class MyApp {
   rootPage: any = WelcomePage;
 
   pagesProgetto: PageInterface[] = [
-    { title: 'Home', component: HomeProgettoPage, icon: 'ios-home-outline'},
+    { title: 'Dashboard', component: HomeProgettoPage, icon: 'ios-home-outline'},
     { title: 'Aggiungi Team Member', component: AggiungimemberPage, icon: 'ios-person-add-outline'},
     { title: 'Crea Task', component: CreaTaskPage, icon: 'ios-add-outline'},
     { title: 'Assegna Task', component: AssegnaTaskPage, icon: 'ios-person-add-outline'},
@@ -42,7 +45,13 @@ export class MyApp {
     { title: 'Modifica Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
   ];
 
+  pagesProgettoTM: PageInterface[] = [
+    { title: 'Home', component: HomeTmPage, icon: 'ios-home-outline'},
+    { title: 'Comunica ore', component: InvioOreSelTaskPage, icon: 'ios-time-outline'},
+  ];
+
   pagesGenerale: PageInterface[] = [
+    { title: 'Home', component: HomePage, icon: 'ios-home-outline'},
     { title: 'Crea Progetto', component: CreaProgettoPage, icon: 'ios-add-outline'},
     { title: 'Seleziona Progetto', component: SelezionaprogettoPage, icon: 'ios-list-box-outline'},
   ];
@@ -114,7 +123,6 @@ export class MyApp {
     this.events.subscribe('user:tm', () => {
       this.enableMenu(false);
     });
-
   }
 
 }

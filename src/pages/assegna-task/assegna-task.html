@@ -20,9 +20,9 @@
 </p>
   <br>
   <ion-list>
-    <ion-item (click)="assegnaTask(task.nome)" *ngFor="let task of tasks">
+    <button ion-item (click)="assegnaTask(task.nome)" *ngFor="let task of tasks">
       <h2> <strong>{{ task.nome}} </strong></h2>
       <h3> {{ task.descrizione }} </h3>
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>

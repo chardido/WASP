@@ -4,6 +4,7 @@ import {LoginPage} from "../login/login";
 import {SignupPage} from "../signup/signup";
 import {Storage} from "@ionic/storage";
 import {HomePage} from "../home/home";
+import {HomeTmPage} from "../home-tm/home-tm";
 /**
  * Generated class for the WelcomePage page.
  *
@@ -23,9 +24,11 @@ export class WelcomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WelcomePage');
-    this.storage.get("username").then((result) => {
-      if(result){
+    this.storage.get("posizione").then((result) => {
+      if(result == "PM"){
         this.navCtrl.setRoot(HomePage);
+      }else if(result == "TM"){
+        this.navCtrl.setRoot(HomeTmPage);
       }
     });
   }

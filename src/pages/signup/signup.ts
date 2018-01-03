@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams, Events} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {HomePage} from "../home/home";
+import {HomeTmPage} from "../home-tm/home-tm";
 
 
 
@@ -60,10 +61,11 @@ export class SignupPage {
                         this.storage.set('posizione',this.signup.tipo);
                         if(this.signup.tipo == 0){
                             this.events.publish('user:pm');
+                            this.navCtrl.setRoot(HomePage);
                         }else{
                             this.events.publish('user:tm');
+                            this.navCtrl.setRoot(HomeTmPage);
                         }
-                        this.navCtrl.setRoot(HomePage);
                     }else{
                         console.log(data['_body'])
                         console.log("Errore durante la registrazione!");

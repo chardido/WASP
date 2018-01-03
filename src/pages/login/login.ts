@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams, Events} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {HomePage} from "../home/home";
 import {Http, Headers, RequestOptions} from '@angular/http';
+import {HomeTmPage} from "../home-tm/home-tm";
 
 /**
  * Generated class for the LoginPage page.
@@ -55,7 +56,7 @@ export class LoginPage {
                         this.events.publish('user:tm');
                         this.storage.set('username',this.login.username);
                         this.storage.set('posizione',"TM");
-                        this.navCtrl.setRoot(HomePage);
+                        this.navCtrl.setRoot(HomeTmPage);
                     }else{
                         console.log("Inserisci username e/o password CORRETTI");
                     }

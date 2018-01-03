@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {WelcomePage} from "../welcome/welcome";
+import {DettaglioTaskPage} from "../dettaglio-task/dettaglio-task";
 
 /**
  * Generated class for the HomeTmPage page.
@@ -17,7 +18,7 @@ import {WelcomePage} from "../welcome/welcome";
 })
 export class HomeTmPage {
   private username: string;
-  private tasks: { nome: string, descrizione: string}[];
+  private tasks: { attivita: string, dataInizio: string, id: number}[];
   private notifiche: { titolo: string, descrizione: string, data:string}[];
 
 
@@ -26,9 +27,9 @@ export class HomeTmPage {
     setTimeout(this.checkLogin(), 1000);
 
     this.tasks = [
-      { "nome": "Task 1", "descrizione": "Questa è la descrizione del task 1"},
-      { "nome": "Task 2", "descrizione": "Questa è la descrizione del task 2"},
-      { "nome": "Task 3", "descrizione": "Questa è la descrizione del task 3"}
+      { "attivita": "Task 1", "dataInizio": "01/01/2018", "id": 1},
+      { "attivita": "Task 2", "dataInizio": "02/01/2018", "id": 2},
+      { "attivita": "Task 3", "dataInizio": "03/01/2018", "id": 3}
     ];
 
     this.notifiche = [
@@ -38,6 +39,13 @@ export class HomeTmPage {
     ];
   }
 
+  dettaglioTask(attivita: string, dataInizio: string){
+    /**
+     * TODO - BISOGNA PASSARE L'ID DEL TASK, E POI PRENDERSELO DAL DB
+     */
+
+    this.navCtrl.push(DettaglioTaskPage, {"attivita":attivita, "dataInizio":dataInizio});
+  }
 
   checkLogin(){
     this.storage.get('username').then((name) => {

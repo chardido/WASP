@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import {Nav, Platform, MenuController, Events} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -14,7 +14,16 @@ import { AssegnaTaskPage } from '../pages/assegna-task/assegna-task';
 import { ModificaBudgetPage } from '../pages/modifica-budget/modifica-budget';
 import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-members';
 
-
+export interface PageInterface {
+  title: string;
+  component: any;
+  icon: string;
+  name?: string;
+  logsOut?: boolean;
+  index?: number;
+  tabName?: string;
+  tabComponent?: any;
+}
 
 @Component({
   templateUrl: 'app.html'
@@ -24,32 +33,47 @@ export class MyApp {
 
   rootPage: any = WelcomePage;
 
+  pagesProgetto: PageInterface[] = [
+    { title: 'Home', component: HomeProgettoPage, icon: 'ios-home-outline'},
+    { title: 'Aggiungi Team Member', component: AggiungimemberPage, icon: 'ios-person-add-outline'},
+    { title: 'Crea Task', component: CreaTaskPage, icon: 'ios-add-outline'},
+    { title: 'Assegna Task', component: AssegnaTaskPage, icon: 'ios-person-add-outline'},
+    { title: 'Visualizza Members', component: VisualizzaMembersPage, icon: 'ios-people-outline'},
+    { title: 'Modifica Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
+  ];
+
+  pagesGenerale: PageInterface[] = [
+    { title: 'Crea Progetto', component: CreaProgettoPage, icon: 'ios-add-outline'},
+    { title: 'Seleziona Progetto', component: SelezionaprogettoPage, icon: 'ios-list-box-outline'},
+  ];
+
+  pagesImpostazioni = [
+    { title: 'Logout', component: WelcomePage, icon: 'log-out', logsOut: true }
+  ];
+
   pagesProgetto: Array<{title: string, component: any, icon: string}>;
+  pagesUtente: Array<{title: string, component: any, icon: string}>;
   pagesGenerale: Array<{title: string, component: any, icon: string}>;
   pagesImpostazioni: Array<{title: string, component: any, icon: string, logsOut?: boolean}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private storage: Storage) {
+  constructor(
+      public platform: Platform,
+      public statusBar: StatusBar,
+      public splashScreen: SplashScreen,
+      private storage: Storage,
+      public menu: MenuController,
+      public events: Events
+  ) {
+    this.storage.get("posizione").then((result) => {
+      if(result == "PM"){
+        this.enableMenu(true);
+      }else{
+        this.enableMenu(false);
+      }
+    });
+
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pagesProgetto = [
-      { title: 'Home', component: HomeProgettoPage, icon: 'ios-home-outline'},
-      { title: 'Aggiungi Team Member', component: AggiungimemberPage, icon: 'ios-person-add-outline'},
-      { title: 'Crea Task', component: CreaTaskPage, icon: 'ios-add-outline'},
-      { title: 'Assegna Task', component: AssegnaTaskPage, icon: 'ios-person-add-outline'},
-      { title: 'Visualizza Members', component: VisualizzaMembersPage, icon: 'ios-people-outline'},
-      { title: 'Modifica Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
-    ];
-
-    this.pagesGenerale = [
-      { title: 'Crea Progetto', component: CreaProgettoPage, icon: 'ios-add-outline'},
-      { title: 'Seleziona Progetto', component: SelezionaprogettoPage, icon: 'ios-list-box-outline'},
-    ];
-
-    this.pagesImpostazioni = [
-      { title: 'Logout', component: WelcomePage, icon: 'log-out', logsOut: true }
-    ];
-
+    this.listenToLoginEvents();
 
   }
 
@@ -76,4 +100,25 @@ export class MyApp {
     this.storage.clear();
     this.nav.setRoot(WelcomePage);
   }
+
+  /**
+   * IF TRUE --> LOGGED AS PM
+   * @param loggedPM
+   */
+  enableMenu(loggedPM: boolean) {
+    this.menu.enable(loggedPM, 'loggedPM');
+    this.menu.enable(!loggedPM, 'loggedTM');
+  }
+
+  listenToLoginEvents() {
+    this.events.subscribe('user:pm', () => {
+      this.enableMenu(true);
+    });
+
+    this.events.subscribe('user:tm', () => {
+      this.enableMenu(false);
+    });
+
+  }
+
 }

@@ -1,4 +1,6 @@
-<ion-menu [content]="content">
+<!-- MENU PM -->
+<ion-menu id="loggedPM" [content]="content">
+
   <ion-header>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
@@ -37,7 +39,34 @@
 
   </ion-content>
 
+
 </ion-menu>
+
+<!-- MENU TM -->
+<ion-menu id="loggedTM" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-list-header>
+        Impostazioni
+      </ion-list-header>
+      <button menuClose ion-item *ngFor="let p of pagesImpostazioni" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+
+</ion-menu>
+
+
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

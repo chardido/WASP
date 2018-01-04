@@ -1,23 +1,14 @@
 webpackJsonp([1],{
 
-<<<<<<< HEAD
-/***/ 312:
-=======
-/***/ 486:
->>>>>>> 2cb599d8fac968de7309189583e8b87bf824891b
+/***/ 489:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisualizzaMembersPageModule", function() { return VisualizzaMembersPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__visualizza_members__ = __webpack_require__(120);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__visualizza_members__ = __webpack_require__(127);
->>>>>>> 2cb599d8fac968de7309189583e8b87bf824891b
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__visualizza_members__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

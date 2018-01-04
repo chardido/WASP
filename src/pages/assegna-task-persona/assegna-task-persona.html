@@ -16,14 +16,14 @@
 
 <ion-content padding>
   <p text-center>
-    Seleziona il team member a cui assegnare il task selezionato
+    Seleziona il Team Member a cui assegnare il task <strong>{{nomeTask}}</strong>
   </p>
   <br>
 
   <ion-list>
     <button ion-item (click)="assegnaTask(utente.username)" *ngFor="let utente of utenti">
-      <h2> <strong>{{ utente.nome }} </strong></h2>
-      <h3> {{ utente.username }} </h3>
+      <h2> <strong>{{ utente.nome | uppercase}} {{utente.cognome | uppercase}} </strong></h2>
+      <h3> {{ utente.username | uppercase}} </h3>
       <h4> Costo giornaliero: <strong>{{ utente.costoG }}€</strong></h4>
     </button>
   </ion-list>

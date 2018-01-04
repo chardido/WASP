@@ -54,7 +54,7 @@ export class SignupPage {
                 tipo: this.signup.tipo,
             }
 
-            this.http.post("http://localhost:80/WASP/apiRegistraUtente.php", postParams, options)
+            this.http.post("http://localhost:8888/WASP/apiRegistraUtente.php", postParams, options)
                 .subscribe(data => {
                     if(data['_body']==1){
                         this.storage.set('username',this.signup.username);
@@ -74,13 +74,6 @@ export class SignupPage {
                     console.log(error);// Error getting the data
                 });
 
-
-            /*
-             this.storage.set('username',this.signup.username);
-             this.storage.set('tipo',this.signup.tipo);
-             this.navCtrl.setRoot(HomePage);
-             console.log(this.signup);
-             */
         }else{
             console.log("Controlla di aver completato tutti i campi");
         }

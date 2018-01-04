@@ -21,7 +21,7 @@ import {HomeTmPage} from "../home-tm/home-tm";
   templateUrl: 'assegna-task.html',
 })
 export class AssegnaTaskPage {
-  private tasks: { attivita: string, dataInizio: string }[];
+  private tasks: { wbs:string, attivita: string, dataInizio: string, dataFine: string }[];
   codiceProgetto: string;
 
 
@@ -30,7 +30,7 @@ export class AssegnaTaskPage {
 
       this.storage.get('codProgetto').then((codice) => {
           this.codiceProgetto = codice;
-          this.chiamataPost(codice);
+          this.chiamataPost();
       });
 
       setTimeout(this.checkProgettoSelezionato(), 1000);
@@ -46,7 +46,7 @@ export class AssegnaTaskPage {
     });
   }
 
-  chiamataPost(codiceP: string){
+  chiamataPost(){
       var headers = new Headers();
       headers.append("Accept", 'application/json');
       headers.append('Content-Type', 'application/json' );
@@ -68,8 +68,8 @@ export class AssegnaTaskPage {
 
 
   //todo - al posto del task gli sarà passato l'id
-  assegnaTask(task: string){
-    this.navCtrl.push(AssegnaTaskPersonaPage, {"task": task});
-    console.log("Task selezionato: "+task);
+  assegnaTask(task: string, wbs: string){
+    this.navCtrl.push(AssegnaTaskPersonaPage, {"nomeTask": task, "codiceTask": wbs});
+    console.log("Task selezionato: "+task + ", codiceTask: "+ wbs);
   }
 }

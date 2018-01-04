@@ -1,23 +1,14 @@
 webpackJsonp([9],{
 
-<<<<<<< HEAD
-/***/ 304:
-=======
-/***/ 478:
->>>>>>> 2cb599d8fac968de7309189583e8b87bf824891b
+/***/ 481:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InvioOrePageModule", function() { return InvioOrePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invio_ore__ = __webpack_require__(115);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invio_ore__ = __webpack_require__(122);
->>>>>>> 2cb599d8fac968de7309189583e8b87bf824891b
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invio_ore__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

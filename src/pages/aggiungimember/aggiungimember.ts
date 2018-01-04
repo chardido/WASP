@@ -5,6 +5,8 @@ import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
 import { AlertController } from 'ionic-angular';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {HomePage} from "../home/home";
+import {HomeTmPage} from "../home-tm/home-tm";
 
 /**
  * Generated class for the AggiungimemberPage page.
@@ -86,14 +88,42 @@ export class AggiungimemberPage {
 
   aggiungiUtente(username: string){
 
-    let alert = this.alertControl.create({
-      title: 'Utente aggiunto',
-      subTitle: username+ ' è stato aggiunto al team.',
-      buttons: ['Continua']
-    });
-    alert.present();
-    console.log("Aggiungo: "+username+" al progetto: "+this.progetto.nome)
-  }
+      let alert = this.alertControl.create({
+          title: 'Team Member aggiunto!',
+          subTitle: username.toUpperCase()+ ' è stato aggiunto al progetto: '+this.codiceProgetto,
+          buttons: ['OK']
+      });
 
+      let alertError = this.alertControl.create({
+          title: username.toUpperCase()+ ' è già associato al progetto ' + this.codiceProgetto + "!",
+          buttons: ['OK']
+      });
+
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/json' );
+      headers.append('Access-Control-Allow-Origin' , '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      let options = new RequestOptions({ headers:headers});
+
+      let postParams = {
+          user: username,
+          codiceProgetto: this.codiceProgetto,
+      }
+
+      this.http.post("http://localhost:8888/WASP/apiAggiungiTeamMemberProgetto.php", postParams, options)
+          .subscribe(data => {
+              if(data['_body']==1){
+                  alert.present();
+                  console.log("Aggiungo: "+username+" al progetto: "+this.progetto.nome)
+              }else{
+                  alertError.present();
+                  console.log("Ci sono stati dei problemi durante l'aggiunta del nuovo team member!");
+              }
+          }, error => {
+              console.log(error);// Error getting the data
+          });
+
+      }
 
 }

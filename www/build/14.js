@@ -1,23 +1,14 @@
 webpackJsonp([14],{
 
-<<<<<<< HEAD
-/***/ 299:
-=======
-/***/ 473:
->>>>>>> 2cb599d8fac968de7309189583e8b87bf824891b
+/***/ 476:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreaProgettoPageModule", function() { return CreaProgettoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreaTaskPageModule", function() { return CreaTaskPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crea_progetto__ = __webpack_require__(110);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crea_progetto__ = __webpack_require__(117);
->>>>>>> 2cb599d8fac968de7309189583e8b87bf824891b
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crea_task__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CreaProgettoPageModule = (function () {
-    function CreaProgettoPageModule() {
+var CreaTaskPageModule = (function () {
+    function CreaTaskPageModule() {
     }
-    CreaProgettoPageModule = __decorate([
+    CreaTaskPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__crea_progetto__["a" /* CreaProgettoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__crea_task__["a" /* CreaTaskPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__crea_progetto__["a" /* CreaProgettoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__crea_task__["a" /* CreaTaskPage */]),
             ],
         })
-    ], CreaProgettoPageModule);
-    return CreaProgettoPageModule;
+    ], CreaTaskPageModule);
+    return CreaTaskPageModule;
 }());
 
-//# sourceMappingURL=crea-progetto.module.js.map
+//# sourceMappingURL=crea-task.module.js.map
 
 /***/ })
 

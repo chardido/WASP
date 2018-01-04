@@ -10,14 +10,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Modifica Budget</ion-title>
+    <ion-title>Aggiorna Budget</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
   <p text-center>
-    Inserisci il nuovo budget per il progetto: <strong>{{nomeProgetto}}</strong>
+    Inserisci il nuovo budget per il progetto: <strong>{{nomeProgetto | uppercase}}</strong>
   </p>
 
   <form (ngSubmit)="modificaBudget()" style="margin-top: 50px;!important;">
@@ -26,6 +26,6 @@
       <ion-input type="number" pattern="[0-9]*" [(ngModel)]="nuovoBudget" name="budget"></ion-input>
     </ion-item>
     <br>
-    <button ion-button type="submit" block>Modifica Budget</button>
+    <button ion-button type="submit" block>Aggiorna Budget</button>
   </form>
 </ion-content>

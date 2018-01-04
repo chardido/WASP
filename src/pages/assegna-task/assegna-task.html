@@ -22,7 +22,7 @@
   <ion-list>
     <button ion-item (click)="assegnaTask(task.attivita, task.wbs)" *ngFor="let task of tasks">
       <h2> <strong>{{ task.attivita}} </strong></h2>
-      <h3> {{ task.dataInizio }} </h3>
+      <h3> {{ task.dataInizio | date:"medium" }} </h3>
     </button>
   </ion-list>
 </ion-content>

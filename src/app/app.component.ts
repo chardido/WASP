@@ -43,7 +43,7 @@ export class MyApp {
     { title: 'Crea Task', component: CreaTaskPage, icon: 'ios-add-outline'},
     { title: 'Assegna Task', component: AssegnaTaskPage, icon: 'ios-person-add-outline'},
     { title: 'Visualizza Members', component: VisualizzaMembersPage, icon: 'ios-people-outline'},
-    { title: 'Modifica Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
+    { title: 'Aggiorna Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
   ];
 
   pagesProgettoTM: PageInterface[] = [

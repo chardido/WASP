@@ -15,7 +15,7 @@
 
 
 <ion-content padding>
-  <h3 text-center>Benvenuto, {{username}}</h3>
+  <h3 text-center>Benvenuto, {{username | uppercase}}</h3>
   <hr/>
 
   <h2>Notifiche</h2>
@@ -29,9 +29,10 @@
 
   <h2>Task in corso</h2>
   <ion-list>
-    <button (click)="dettaglioTask(task.attivita, task.dataInizio)" ion-item *ngFor="let task of tasks">
+    <button (click)="dettaglioTask(task.nome, task.attivita, task.dataInizio)" ion-item *ngFor="let task of tasks">
+      <!--<h2><strong>Progetto {{task.nome}}</strong></h2>-->
       <h2><strong>{{task.attivita}}</strong></h2>
-      <h4>{{task.dataInizio}}</h4>
+      <h4>{{task.dataInizio | date:"medium"}}</h4>
     </button>
   </ion-list>
 

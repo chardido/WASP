@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {WelcomePage} from "../welcome/welcome";
 import {DettaglioTaskPage} from "../dettaglio-task/dettaglio-task";
+import {Headers, Http, RequestOptions} from "@angular/http";
 
 /**
  * Generated class for the HomeTmPage page.
@@ -18,19 +19,14 @@ import {DettaglioTaskPage} from "../dettaglio-task/dettaglio-task";
 })
 export class HomeTmPage {
   private username: string;
-  private tasks: { attivita: string, dataInizio: string, id: number}[];
+  private tasks: { nome: string, attivita: string, dataInizio: string}[];
   private notifiche: { titolo: string, descrizione: string, data:string}[];
 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     setTimeout(this.checkLogin(), 1000);
 
-    this.tasks = [
-      { "attivita": "Task 1", "dataInizio": "01/01/2018", "id": 1},
-      { "attivita": "Task 2", "dataInizio": "02/01/2018", "id": 2},
-      { "attivita": "Task 3", "dataInizio": "03/01/2018", "id": 3}
-    ];
 
     this.notifiche = [
       {"titolo":"Task", "descrizione":"Ti è stato assegnato un nuovo task", "data":"03/01/2018"},
@@ -39,12 +35,28 @@ export class HomeTmPage {
     ];
   }
 
-  dettaglioTask(attivita: string, dataInizio: string){
-    /**
-     * TODO - BISOGNA PASSARE L'ID DEL TASK, E POI PRENDERSELO DAL DB
-     */
+    chiamataPost(){
+        var headers = new Headers();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json' );
+        headers.append('Access-Control-Allow-Origin' , '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        let options = new RequestOptions({ headers:headers});
 
-    this.navCtrl.push(DettaglioTaskPage, {"attivita":attivita, "dataInizio":dataInizio});
+        let postParams = {
+            username: this.username
+        }
+
+        this.http.post("http://localhost:8888/WASP/apiTasksInCorsoTeamMember.php", postParams, options).map(res => res.json())
+            .subscribe(data => {
+                this.tasks = data;
+            }, error => {
+                console.log(error);// Error getting the data
+            });
+    }
+
+  dettaglioTask(nomeProgetto: string, attivita: string, dataInizio: string){
+    this.navCtrl.push(DettaglioTaskPage, {"nomeProgetto":nomeProgetto, "attivita":attivita, "dataInizio":dataInizio});
   }
 
   checkLogin(){
@@ -53,6 +65,7 @@ export class HomeTmPage {
         this.navCtrl.setRoot(WelcomePage);
       } else {
         this.username = name;
+        this.chiamataPost();
         console.log(this.username)
       }
     });

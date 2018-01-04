@@ -21,9 +21,10 @@
   </p>
   <br>
   <ion-list>
-    <button ion-item (click)="inviaOre(task.nome)" *ngFor="let task of tasks">
-      <h2> <strong>{{ task.nome}} </strong></h2>
-      <h3> {{ task.descrizione }} </h3>
+    <button ion-item (click)="inviaOre(task.nome, task.idTask)" *ngFor="let task of tasks">
+      <h2> Progetto <strong>{{ task.nome}} </strong></h2>
+      <h3> <strong>{{ task.attivita }}</strong> </h3>
+      <h3> {{ task.dataInizio | date:"medium" }} </h3>
     </button>
   </ion-list>
 </ion-content>

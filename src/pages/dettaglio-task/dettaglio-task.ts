@@ -16,8 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DettaglioTaskPage {
   attivita: string;
   dataInizio: string;
+  nomeProgetto: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.nomeProgetto = this.navParams.get("nomeProgetto");
     this.attivita = this.navParams.get("attivita");
     this.dataInizio = this.navParams.get("dataInizio");
   }

@@ -16,15 +16,15 @@
 
 <ion-content padding>
   <p text-center>
-    Seleziona un membro per visualizzarne le informazioni
+    Seleziona un membro per visualizzarne le informazioni.
   </p>
 <br>
   <ion-list>
-    <button ion-item (click)="selezionaPersona(utente.nome, utente.ruolo, utente.costoG, utente.ricavoG)" *ngFor="let utente of utenti">
-      <h2> <strong>{{ utente.nome }} </strong></h2>
-      <h3> <strong>{{ utente.ruolo }} </strong></h3>
-      <h4> Costo giornaliero: <strong>{{ utente.costoG }}€</strong></h4>
-      <h4> Ricavo giornaliero: <strong>{{ utente.ricavoG }}€</strong></h4>
+    <button ion-item (click)="selezionaPersona(utente.cognome, utente.nome, utente.posizione, utente.costo, utente.ricavo, utente.username)" *ngFor="let utente of utenti">
+      <h2> <strong>{{ utente.nome | uppercase}} {{utente.cognome | uppercase}} </strong></h2>
+      <h3 *ngIf="utente.posizione"> <strong>Team Member</strong></h3>
+      <h4> Costo giornaliero: <strong>{{ utente.costo }}€</strong></h4>
+      <h4> Ricavo giornaliero: <strong>{{ utente.ricavo }}€</strong></h4>
     </button>
   </ion-list>
 </ion-content>

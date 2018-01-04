@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
+import {Headers, Http, RequestOptions} from "@angular/http";
+import {HomeProgettoPage} from "../home-progetto/home-progetto";
 
 /**
  * Generated class for the CreaTaskPage page.
@@ -11,8 +13,9 @@ import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
  */
 
 export interface Task {
-  nome: string,
-  descrizione: string
+  wbs: string,
+  attivita: string,
+    dataInizio: any
 }
 
 @IonicPage()
@@ -21,11 +24,18 @@ export interface Task {
   templateUrl: 'crea-task.html',
 })
 export class CreaTaskPage {
-  task: Task = {nome: '', descrizione: ''};
+  task: Task = { wbs: '', attivita: '', dataInizio: ''};
+  codiceProgetto: string;
 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController, public http: Http) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController) {
+      this.task.dataInizio = new Date().toISOString();
+
+      this.storage.get('codProgetto').then((codice) => {
+          this.codiceProgetto = codice;
+      });
+
     setTimeout(this.checkProgettoSelezionato(), 1000);
   }
 
@@ -38,16 +48,38 @@ export class CreaTaskPage {
     });
   }
 
-
   creaTask(){
-    if(this.task.nome != "" && this.task.descrizione != ""){
+
+    if(this.task.attivita != "" && this.task.dataInizio != ""){
       let alert = this.alertControl.create({
-        title: 'Task Creato',
-        subTitle: 'Il task è stato creato correttamente.',
+        title: 'Task Creato!',
+        subTitle: 'Il task ' + this.task.attivita + ' è stato creato correttamente.',
         buttons: ['Continua']
       });
-      alert.present();
-      console.log("Nuovo task: "+this.task.nome+ "; Descrizione: "+this.task.descrizione);
+
+        var headers = new Headers();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json' );
+        headers.append('Access-Control-Allow-Origin' , '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        let options = new RequestOptions({ headers:headers});
+
+        let postParams = {
+            codiceProgetto: this.codiceProgetto,
+            attivita: this.task.attivita,
+            dataInizio: this.task.dataInizio
+        }
+
+        this.http.post("http://localhost:8888/WASP/apiAggiungiTask.php", postParams, options)
+            .subscribe(data => {
+                alert.present();
+                this.navCtrl.setRoot(HomeProgettoPage);
+                //console.log("Nuovo task: "+this.task.attivita+ "; Data: "+this.task.dataInizio);
+            }, error => {
+                console.log(error);// Error getting the data
+            });
+
+
     }
 
   }

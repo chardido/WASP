@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ProfiloMemberPage} from "../profilo-member/profilo-member";
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
+import {Http, Headers, RequestOptions} from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the VisualizzaMembersPage page.
@@ -17,19 +19,39 @@ import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
   templateUrl: 'visualizza-members.html',
 })
 export class VisualizzaMembersPage {
-  private utenti: { nome: string, username: string, ruolo: string,costoG: number, ricavoG: number}[];
+  private utenti: { cognome: string, nome: string, username: string, posizione: number, costo: string, ricavo: string}[];
+  codiceProgetto : string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
 
     setTimeout(this.checkProgettoSelezionato(), 1000);
 
-    this.utenti = [
-      { "nome": "Carlo Di Domenico", "username": "chardido", "ruolo": "Team Manager","costoG": 1200, "ricavoG": 1400 },
-      { "nome": "Fabiano Pecorelli", "username": "fabianopecorelli", "ruolo": "Team Member", "costoG": 300, "ricavoG": 350 },
-      { "nome": "Umberto Picariello", "username": "umbertopic", "ruolo": "Team Member", "costoG" : 300, "ricavoG": 400 }
-    ];
+      this.storage.get('codProgetto').then((cod) => {
+          this.codiceProgetto = cod;
+          this.chiamataPost();
+      });
 
+  }
+
+  chiamataPost(){
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/json' );
+      headers.append('Access-Control-Allow-Origin' , '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      let options = new RequestOptions({ headers:headers});
+
+      let postParams = {
+          codice: this.codiceProgetto,
+      }
+
+      this.http.post("http://localhost:8888/WASP/apiListaMembriAssociatiAlProgetto.php", postParams, options).map(res => res.json())
+          .subscribe(data => {
+              this.utenti = data;
+          }, error => {
+              console.log(error);// Error getting the data
+          });
   }
 
   checkProgettoSelezionato(){
@@ -41,8 +63,8 @@ export class VisualizzaMembersPage {
     });
   }
 
-  selezionaPersona(nome:string, ruolo:string, costo:number, ricavo:number){
-    this.navCtrl.push(ProfiloMemberPage, {"nome":nome,"ruolo":ruolo,"costo":costo,"ricavo":ricavo});
+  selezionaPersona(cognome: string, nome:string, posizione:string, costo:number, ricavo:number, username:string){
+    this.navCtrl.push(ProfiloMemberPage, {"cognome":cognome, "nome":nome, "ruolo":posizione, "costo":costo, "ricavo":ricavo, "user":username});
     console.log("Selezionato: "+nome);
   }
 

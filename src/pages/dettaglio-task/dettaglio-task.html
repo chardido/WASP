@@ -16,12 +16,15 @@
 <ion-content padding>
 
   <ion-list>
-    <h2 text-center="">Dettagli task</h2>
+    <h2 text-center="">Dettaglio task</h2>
     <ion-item>
-      <h4> Nome <span float-right><strong>{{ attivita }} </strong></span></h4>
+      <h4> Progetto <span float-right><strong>{{ nomeProgetto | uppercase}} </strong></span></h4>
     </ion-item>
     <ion-item>
-      <h4>Descrizione <span float-right><strong>{{ dataInizio }}</strong></span></h4>
+      <h4> Attivita <span float-right><strong>{{ attivita | uppercase}} </strong></span></h4>
+    </ion-item>
+    <ion-item>
+      <h4>Data Inizio <span float-right><strong>{{ dataInizio | date:"medium"}}</strong></span></h4>
     </ion-item>
 
   </ion-list>

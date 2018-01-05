@@ -1262,79 +1262,83 @@ webpackEmptyAsyncContext.id = 139;
 var map = {
 	"../pages/aggiungimember/aggiungimember.module": [
 		472,
-		18
+		40
 	],
 	"../pages/assegna-task-persona/assegna-task-persona.module": [
 		473,
-		17
+		39
 	],
 	"../pages/assegna-task/assegna-task.module": [
 		474,
-		16
+		38
+	],
+	"../pages/convalida-ore-lista/convalida-ore-lista.module": [
+		491,
+		21
 	],
 	"../pages/crea-progetto/crea-progetto.module": [
 		475,
-		15
+		37
 	],
 	"../pages/crea-task/crea-task.module": [
 		476,
-		14
+		36
 	],
 	"../pages/dettaglio-task/dettaglio-task.module": [
 		477,
-		13
+		35
 	],
 	"../pages/home-progetto/home-progetto.module": [
 		478,
-		12
+		34
 	],
 	"../pages/home-tm/home-tm.module": [
 		479,
-		11
+		33
 	],
 	"../pages/invio-ore-sel-task/invio-ore-sel-task.module": [
 		480,
-		10
+		32
 	],
 	"../pages/invio-ore/invio-ore.module": [
 		481,
-		9
+		31
 	],
 	"../pages/login/login.module": [
 		482,
-		8
+		30
 	],
 	"../pages/modifica-budget/modifica-budget.module": [
 		483,
-		7
+		29
 	],
 	"../pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.module": [
 		484,
-		6
+		28
 	],
 	"../pages/modifica-risorsa/modifica-risorsa.module": [
 		485,
-		5
+		27
 	],
 	"../pages/profilo-member/profilo-member.module": [
 		486,
-		4
+		26
 	],
 	"../pages/selezionaprogetto/selezionaprogetto.module": [
 		487,
-		3
+		25
 	],
 	"../pages/signup/signup.module": [
 		488,
-		2
+		24
 	],
 	"../pages/visualizza-members/visualizza-members.module": [
 		489,
-		1
+		23
 	],
 	"../pages/welcome/welcome.module": [
 		490,
-		0
+		22
 	]
 };
 function webpackAsyncContext(req) {

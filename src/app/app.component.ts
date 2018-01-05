@@ -15,8 +15,8 @@ import { ModificaBudgetPage } from '../pages/modifica-budget/modifica-budget';
 import { VisualizzaMembersPage } from '../pages/visualizza-members/visualizza-members';
 import { InvioOreSelTaskPage } from '../pages/invio-ore-sel-task/invio-ore-sel-task';
 import { HomeTmPage } from '../pages/home-tm/home-tm';
-import {HomePage} from "../pages/home/home";
-import { DettaglioTaskPage } from "../pages/dettaglio-task/dettaglio-task";
+import { HomePage } from "../pages/home/home";
+import { ConvalidaOreListaPage } from "../pages/convalida-ore-lista/convalida-ore-lista";
 
 export interface PageInterface {
   title: string;
@@ -44,6 +44,7 @@ export class MyApp {
     { title: 'Assegna Task', component: AssegnaTaskPage, icon: 'ios-person-add-outline'},
     { title: 'Visualizza Members', component: VisualizzaMembersPage, icon: 'ios-people-outline'},
     { title: 'Aggiorna Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
+    { title: 'Convalida Ore', component: ConvalidaOreListaPage, icon: 'ios-clock-outline'},
   ];
 
   pagesProgettoTM: PageInterface[] = [

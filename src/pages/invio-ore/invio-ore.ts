@@ -46,7 +46,7 @@ export class InvioOrePage {
             ore: this.oreInserite
         }
 
-        this.http.post("http://localhost:8888/WASP/apiInviaOre.php", postParams, options)
+        this.http.post("http://localhost:80/WASP/apiInviaOre.php", postParams, options)
             .subscribe(data => {
                 alert.present();
                 this.navCtrl.setRoot(HomeTmPage);

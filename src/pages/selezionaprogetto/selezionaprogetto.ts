@@ -32,7 +32,7 @@ export class SelezionaprogettoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
 
-     this.http.get("http://localhost:8888/WASP/apiListaProgetti.php").map(res => res.json())
+     this.http.get("http://localhost:80/WASP/apiListaProgetti.php").map(res => res.json())
          .subscribe(data => {
              this.progetti = data;
              console.log(data);

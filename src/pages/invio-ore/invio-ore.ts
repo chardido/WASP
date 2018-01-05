@@ -20,10 +20,12 @@ export class InvioOrePage {
   taskSelezionato: string;
   idTaskSelezonato: string;
   oreInserite: number;
+  username: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertControl: AlertController, public http: Http) {
     this.taskSelezionato = this.navParams.get("task");
     this.idTaskSelezonato = this.navParams.get("idTask");
+    this.username = this.navParams.get("username");
   }
 
   comunicaOre(){
@@ -43,10 +45,11 @@ export class InvioOrePage {
 
         let postParams = {
             idTask: this.idTaskSelezonato,
-            ore: this.oreInserite
+            ore: this.oreInserite,
+            user: this.username
         }
 
-        this.http.post("http://localhost:80/WASP/apiInviaOre.php", postParams, options)
+        this.http.post("http://localhost:8888/WASP/apiInviaOre.php", postParams, options)
             .subscribe(data => {
                 alert.present();
                 this.navCtrl.setRoot(HomeTmPage);

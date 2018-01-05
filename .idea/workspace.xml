@@ -2,32 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83345422-96ff-4bf5-ba22-13d2fd91b1a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change beforePath="$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.ts" afterPath="$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.ts" />
-      <change beforePath="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.html" afterPath="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.html" />
       <change beforePath="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.ts" afterPath="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/assegna-task/assegna-task.ts" afterPath="$PROJECT_DIR$/src/pages/assegna-task/assegna-task.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.html" afterPath="$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.html" />
+      <change beforePath="$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.ts" afterPath="$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/crea-progetto/crea-progetto.ts" afterPath="$PROJECT_DIR$/src/pages/crea-progetto/crea-progetto.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/crea-task/crea-task.ts" afterPath="$PROJECT_DIR$/src/pages/crea-task/crea-task.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.html" afterPath="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.html" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.ts" afterPath="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home-progetto/home-progetto.html" afterPath="$PROJECT_DIR$/src/pages/home-progetto/home-progetto.html" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home-progetto/home-progetto.ts" afterPath="$PROJECT_DIR$/src/pages/home-progetto/home-progetto.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home-tm/home-tm.html" afterPath="$PROJECT_DIR$/src/pages/home-tm/home-tm.html" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home-tm/home-tm.ts" afterPath="$PROJECT_DIR$/src/pages/home-tm/home-tm.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.html" afterPath="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.html" />
+      <change beforePath="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.scss" afterPath="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.scss" />
+      <change beforePath="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.ts" afterPath="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/invio-ore/invio-ore.ts" afterPath="$PROJECT_DIR$/src/pages/invio-ore/invio-ore.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/login.ts" afterPath="$PROJECT_DIR$/src/pages/login/login.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/modifica-budget/modifica-budget.ts" afterPath="$PROJECT_DIR$/src/pages/modifica-budget/modifica-budget.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.ts" afterPath="$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.ts" />
       <change beforePath="$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.ts" afterPath="$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.ts" />
       <change beforePath="$PROJECT_DIR$/src/pages/profilo-member/profilo-member.ts" afterPath="$PROJECT_DIR$/src/pages/profilo-member/profilo-member.ts" />
-      <change beforePath="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.html" afterPath="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.html" />
+      <change beforePath="$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.ts" afterPath="$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.ts" />
+      <change beforePath="$PROJECT_DIR$/src/pages/signup/signup.ts" afterPath="$PROJECT_DIR$/src/pages/signup/signup.ts" />
       <change beforePath="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.ts" afterPath="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.ts" />
+      <change beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
       <change beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="$PROJECT_DIR$/www/build/1.js" />
       <change beforePath="$PROJECT_DIR$/www/build/10.js" afterPath="$PROJECT_DIR$/www/build/10.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/11.js" afterPath="$PROJECT_DIR$/www/build/11.js" />
       <change beforePath="$PROJECT_DIR$/www/build/12.js" afterPath="$PROJECT_DIR$/www/build/12.js" />
       <change beforePath="$PROJECT_DIR$/www/build/13.js" afterPath="$PROJECT_DIR$/www/build/13.js" />
       <change beforePath="$PROJECT_DIR$/www/build/14.js" afterPath="$PROJECT_DIR$/www/build/14.js" />
       <change beforePath="$PROJECT_DIR$/www/build/15.js" afterPath="$PROJECT_DIR$/www/build/15.js" />
       <change beforePath="$PROJECT_DIR$/www/build/16.js" afterPath="$PROJECT_DIR$/www/build/16.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/16.js.map" afterPath="$PROJECT_DIR$/www/build/16.js.map" />
       <change beforePath="$PROJECT_DIR$/www/build/17.js" afterPath="$PROJECT_DIR$/www/build/17.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/17.js.map" afterPath="$PROJECT_DIR$/www/build/17.js.map" />
       <change beforePath="$PROJECT_DIR$/www/build/18.js" afterPath="$PROJECT_DIR$/www/build/18.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/18.js.map" afterPath="$PROJECT_DIR$/www/build/18.js.map" />
       <change beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="$PROJECT_DIR$/www/build/2.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/21.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/21.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/22.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/22.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/23.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/23.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/24.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/24.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/25.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/25.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/26.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/26.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/27.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/27.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/28.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/28.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/29.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/29.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="$PROJECT_DIR$/www/build/3.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/30.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/30.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/31.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/31.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/32.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/32.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/33.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/33.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/34.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/34.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/35.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/35.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/36.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/36.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/37.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/37.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/38.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/38.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/39.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/39.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="$PROJECT_DIR$/www/build/4.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/40.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/40.js.map" afterPath="" />
       <change beforePath="$PROJECT_DIR$/www/build/5.js" afterPath="$PROJECT_DIR$/www/build/5.js" />
       <change beforePath="$PROJECT_DIR$/www/build/6.js" afterPath="$PROJECT_DIR$/www/build/6.js" />
       <change beforePath="$PROJECT_DIR$/www/build/7.js" afterPath="$PROJECT_DIR$/www/build/7.js" />
       <change beforePath="$PROJECT_DIR$/www/build/8.js" afterPath="$PROJECT_DIR$/www/build/8.js" />
       <change beforePath="$PROJECT_DIR$/www/build/9.js" afterPath="$PROJECT_DIR$/www/build/9.js" />
+      <change beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="$PROJECT_DIR$/www/build/main.css" />
       <change beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
       <change beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="$PROJECT_DIR$/www/build/vendor.js" />
@@ -51,10 +114,17 @@
       <find>posizione</find>
       <find>Task in</find>
       <find>apiListaMembriA</find>
+      <find>local</find>
+      <find>apiTask</find>
+      <find>echo</find>
+      <find>crea</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/src/pages</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/src/pages</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -63,57 +133,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="/Applications/MAMP/htdocs/WASP/apiRegistraUtente.php" />
-        <option value="/Applications/MAMP/htdocs/WASP/apiListaTasks.php" />
-        <option value="$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.scss" />
-        <option value="$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.ts" />
-        <option value="$PROJECT_DIR$/src/pages/crea-progetto/crea-progetto.ts" />
-        <option value="$PROJECT_DIR$/src/pages/login/login.ts" />
-        <option value="$PROJECT_DIR$/src/pages/signup/signup.ts" />
-        <option value="$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.html" />
-        <option value="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.scss" />
-        <option value="$PROJECT_DIR$/src/pages/assegna-task/assegna-task.ts" />
-        <option value="/Applications/MAMP/htdocs/WASP/apiListaTeamMember.php" />
-        <option value="/Applications/MAMP/htdocs/WASP/apiVisualizzaMember.php" />
-        <option value="/Applications/MAMP/htdocs/WASP/apiListaTasksTeamMember.php" />
-        <option value="$PROJECT_DIR$/src/pages/profilo-member/d" />
-        <option value="$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.html" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAggiornaRicavoMember copia.php" />
         <option value="$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.html" />
         <option value="$PROJECT_DIR$/src/pages/profilo-member/profilo-member.html" />
-        <option value="$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/modifica-budget/modifica-budget.html" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAggiornaRicavoMember.php" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAggiornaBudgetProgetto.php" />
-        <option value="$PROJECT_DIR$/src/pages/modifica-budget/modifica-budget.ts" />
         <option value="$PROJECT_DIR$/src/pages/crea-task/crea-task.html" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAggiungiTask.php" />
-        <option value="$PROJECT_DIR$/src/pages/crea-task/crea-task.ts" />
         <option value="$PROJECT_DIR$/src/pages/assegna-task/assegna-task.html" />
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
         <option value="/Applications/MAMP/htdocs/WASP/apiTasksInCorsoTeamMember.php" />
-        <option value="$PROJECT_DIR$/src/pages/home-tm/home-tm.html" />
-        <option value="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.ts" />
-        <option value="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.html" />
-        <option value="$PROJECT_DIR$/src/pages/home-tm/home-tm.ts" />
-        <option value="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.html" />
-        <option value="/Applications/MAMP/htdocs/WASP/apiInviaOre.php" />
-        <option value="$PROJECT_DIR$/src/pages/invio-ore/invio-ore.ts" />
-        <option value="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.ts" />
-        <option value="$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.ts" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAggiungiTeamMemberProgetto.php" />
         <option value="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.html" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAggiornaCostoMember.php" />
-        <option value="$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.ts" />
-        <option value="$PROJECT_DIR$/src/pages/profilo-member/profilo-member.ts" />
         <option value="/Applications/MAMP/htdocs/WASP/apiAssegnaTaskAlMember.php" />
         <option value="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.html" />
-        <option value="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.ts" />
         <option value="/Applications/MAMP/htdocs/WASP/apiListaMembriAssociatiAlProgettoPerTask.php" />
-        <option value="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.ts" />
         <option value="/Applications/MAMP/htdocs/WASP/apiListaMembriAssociatiAlProgetto.php" />
+        <option value="$PROJECT_DIR$/src/pages/assegna-task/assegna-task.ts" />
+        <option value="$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.ts" />
+        <option value="$PROJECT_DIR$/src/pages/crea-progetto/crea-progetto.ts" />
+        <option value="$PROJECT_DIR$/src/pages/crea-task/crea-task.ts" />
+        <option value="$PROJECT_DIR$/src/pages/login/login.ts" />
+        <option value="$PROJECT_DIR$/src/pages/modifica-budget/modifica-budget.ts" />
+        <option value="$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.ts" />
+        <option value="$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.ts" />
+        <option value="$PROJECT_DIR$/src/pages/profilo-member/profilo-member.ts" />
+        <option value="$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.ts" />
+        <option value="$PROJECT_DIR$/src/pages/signup/signup.ts" />
+        <option value="$PROJECT_DIR$/src/pages/invio-ore/invio-ore.ts" />
+        <option value="/Applications/MAMP/htdocs/WASP/apiInviaOre.php" />
+        <option value="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.scss" />
+        <option value="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.ts" />
+        <option value="$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.html" />
+        <option value="$PROJECT_DIR$/src/pages/home-tm/home-tm.html" />
+        <option value="$PROJECT_DIR$/src/pages/home-tm/home-tm.ts" />
+        <option value="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.ts" />
+        <option value="$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.html" />
+        <option value="$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.html" />
+        <option value="$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.ts" />
+        <option value="$PROJECT_DIR$/src/pages/home-progetto/home-progetto.ts" />
+        <option value="/Applications/MAMP/htdocs/WASP/apiSpeseERicaviGiornalieri.php" />
+        <option value="/Applications/MAMP/htdocs/WASP/apiVisualizzaMember.php" />
+        <option value="$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.ts" />
+        <option value="$PROJECT_DIR$/src/pages/home-progetto/home-progetto.html" />
+        <option value="/Applications/MAMP/htdocs/WASP/apiListaOreComunicate.php" />
+        <option value="$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.html" />
+        <option value="/Applications/MAMP/htdocs/WASP/apiConvalidaOre.php" />
+        <option value="$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.ts" />
       </list>
     </option>
   </component>
@@ -174,6 +244,27 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="WASP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WASP" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assegna-task-persona" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="WASP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WASP" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home-progetto" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="WASP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WASP" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="invio-ore" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -214,12 +305,12 @@
       <workItem from="1514989088397" duration="12989000" />
       <workItem from="1515008353691" duration="190000" />
       <workItem from="1515051303152" duration="27027000" />
-      <workItem from="1515140137932" duration="7691000" />
+      <workItem from="1515140137932" duration="23660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47897000" />
+    <option name="totallyTimeSpent" value="63866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -271,311 +362,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/crea-task/crea-task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/login/login.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="52" column="55" lean-forward="true" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-536">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaTasksTeamMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="144" lean-forward="false" selection-start-line="13" selection-start-column="144" selection-end-line="13" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiTasksInCorsoTeamMember copia.php" />
-    <entry file="file://$PROJECT_DIR$/src/pages/crea-task/crea-task.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home-tm/home-tm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore/invio-ore.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiInviaOre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore/invio-ore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore/invio-ore.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="61" lean-forward="false" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home-tm/home-tm.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/assegna-task/assegna-task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaTasks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-          <folding>
-            <marker date="1515001635191" expanded="true" signature="267:325" ph="SELECT * FRO... dettaglioProgetto" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaTeamMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1515059955741" expanded="true" signature="158:281" ph="SELECT DISTI... login" />
-            <marker date="1515059955741" expanded="true" signature="229:280" ph="SELECT user membriTask" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home-progetto/home-progetto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="118" column="55" lean-forward="false" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/profilo-member/profilo-member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="54" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaProgetti.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <marker date="1514990221660" expanded="true" signature="158:180" ph="SELECT * FRO... progetto" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiRegistraUtente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <marker date="1515001121583" expanded="true" signature="310:437" ph="INSERT INTO login... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiTasksInCorsoTeamMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <marker date="1515086413144" expanded="true" signature="268:425" ph="SELECT * FRO... membriTask" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiAggiungiTeamMemberProgetto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1515144144254" expanded="true" signature="300:386" ph="INSERT INTO membriTask... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiAggiungiTask.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="9" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <marker date="1515084411821" expanded="true" signature="373:421" ph="SELECT wbs F... dettaglioProgetto" />
-            <marker date="1515084411821" expanded="true" signature="373:441" ph="SELECT wbs F... dettaglioProgetto" />
-            <marker date="1515084411821" expanded="true" signature="373:467" ph="SELECT wbs F... dettaglioProgetto" />
-            <marker date="1515084411821" expanded="true" signature="379:380" ph="INSERT INTO dettaglioProgetto... " />
-            <marker date="1515084411821" expanded="true" signature="730:828" ph="INSERT INTO dettaglioProgetto... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/MAMP/htdocs/WASP/apiAggiornaCostoMember.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -592,21 +378,6 @@
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding>
             <marker date="1515080261772" expanded="true" signature="282:349" ph="UPDATE progetto... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiAssegnaTaskAlMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="39" column="51" lean-forward="false" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
-          <folding>
-            <marker date="1515146662016" expanded="true" signature="361:391" ph="SELECT * FRO... membriTask" />
-            <marker date="1515146662016" expanded="true" signature="361:464" ph="SELECT * FRO... membriTask" />
-            <marker date="1515146662016" expanded="true" signature="559:669" ph="UPDATE membriTask... " />
-            <marker date="1515146662016" expanded="true" signature="816:904" ph="SELECT * FRO... membriTask" />
-            <marker date="1515146662016" expanded="true" signature="846:904" ph="UPDATE membriTask... " />
-            <marker date="1515146662016" expanded="true" signature="1189:1289" ph="INSERT INTO membriTask... " />
           </folding>
         </state>
       </provider>
@@ -629,34 +400,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="21" column="88" lean-forward="true" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="55" lean-forward="true" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/profilo-member/profilo-member.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="33" column="55" lean-forward="true" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -679,10 +426,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaMembriAssociatiAlProgetto.php">
+    <entry file="file://$PROJECT_DIR$/src/pages/assegna-task/assegna-task.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="60" column="43" lean-forward="false" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/crea-progetto/crea-progetto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/crea-task/crea-task.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="72" column="45" lean-forward="false" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore/invio-ore.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/list/list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/login/login.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="47" column="49" lean-forward="false" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/modifica-budget/modifica-budget.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="54" column="45" lean-forward="false" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/welcome/welcome.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiTasksInCorsoTeamMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <marker date="1515086413144" expanded="true" signature="268:425" ph="SELECT * FRO... membriTask" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home-tm/home-tm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="96" lean-forward="false" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="61" lean-forward="false" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dettaglio-task/dettaglio-task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home-tm/home-tm.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="58" column="146" lean-forward="false" selection-start-line="58" selection-start-column="146" selection-end-line="58" selection-end-column="146" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore-sel-task/invio-ore-sel-task.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaTasks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+          <folding>
+            <marker date="1515001635191" expanded="true" signature="267:325" ph="SELECT * FRO... dettaglioProgetto" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaProgetti.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="185" lean-forward="false" selection-start-line="16" selection-start-column="185" selection-end-line="16" selection-end-column="185" />
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <marker date="1514990221660" expanded="true" signature="158:180" ph="SELECT * FRO... progetto" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="33" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaTasksTeamMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1515074694576" expanded="true" signature="295:486" ph="SELECT * FRO... membriTask" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaTeamMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1515059955741" expanded="true" signature="158:281" ph="SELECT DISTI... login" />
+            <marker date="1515059955741" expanded="true" signature="229:280" ph="SELECT user membriTask" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/aggiungimember/aggiungimember.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="709">
+          <caret line="69" column="44" lean-forward="false" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/visualizza-members/visualizza-members.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiVisualizzaMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding>
+            <marker date="1515166641630" expanded="true" signature="268:428" ph="SELECT DISTI... membriTask" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaMembriAssociatiAlProgetto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
             <marker date="1515148621209" expanded="true" signature="291:439" ph="SELECT * FRO... membriTask" />
             <marker date="1515148621209" expanded="true" signature="291:451" ph="SELECT * FRO... membriTask" />
@@ -693,20 +677,165 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiSpeseERicaviGiornalieri.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <marker date="1515166512739" expanded="true" signature="297:409" ph="SELECT * FRO... dettaglioProgetto" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home-progetto/home-progetto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiAssegnaTaskAlMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <marker date="1515146662016" expanded="true" signature="361:391" ph="SELECT * FRO... membriTask" />
+            <marker date="1515146662016" expanded="true" signature="361:464" ph="SELECT * FRO... membriTask" />
+            <marker date="1515146662016" expanded="true" signature="559:669" ph="UPDATE membriTask... " />
+            <marker date="1515146662016" expanded="true" signature="816:904" ph="SELECT * FRO... membriTask" />
+            <marker date="1515146662016" expanded="true" signature="846:904" ph="UPDATE membriTask... " />
+            <marker date="1515146662016" expanded="true" signature="1189:1289" ph="INSERT INTO membriTask... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiListaOreComunicate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <marker date="1515169025407" expanded="true" signature="295:435" ph="SELECT * FRO... membriTask" />
+            <marker date="1515169025407" expanded="true" signature="295:447" ph="SELECT * FRO... membriTask" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiInviaOre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="104" lean-forward="false" selection-start-line="17" selection-start-column="104" selection-end-line="17" selection-end-column="104" />
+          <folding>
+            <marker date="1515150816804" expanded="true" signature="297:370" ph="UPDATE membriTask... " />
+            <marker date="1515150816804" expanded="true" signature="297:381" ph="UPDATE membriTask... " />
+            <marker date="1515150816804" expanded="true" signature="297:391" ph="UPDATE membriTask... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiAggiungiTask.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <marker date="1515084411821" expanded="true" signature="373:421" ph="SELECT wbs F... dettaglioProgetto" />
+            <marker date="1515084411821" expanded="true" signature="373:441" ph="SELECT wbs F... dettaglioProgetto" />
+            <marker date="1515084411821" expanded="true" signature="373:467" ph="SELECT wbs F... dettaglioProgetto" />
+            <marker date="1515084411821" expanded="true" signature="379:380" ph="INSERT INTO dettaglioProgetto... " />
+            <marker date="1515084411821" expanded="true" signature="730:828" ph="INSERT INTO dettaglioProgetto... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/assegna-task-persona/assegna-task-persona.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="46" column="84" lean-forward="false" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
+        <state relative-caret-position="207">
+          <caret line="24" column="110" lean-forward="false" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="110" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/assegna-task/assegna-task.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/home-progetto/home-progetto.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="60" column="66" lean-forward="true" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+        <state relative-caret-position="454">
+          <caret line="73" column="127" lean-forward="true" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="127" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/modifica-risorsa/modifica-risorsa.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/profilo-member/profilo-member.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="27" column="78" lean-forward="false" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/selezionaprogetto/selezionaprogetto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/signup/signup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/MAMP/htdocs/WASP/apiConvalidaOre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding>
+            <marker date="1515170593186" expanded="true" signature="276:330" ph="INSERT INTO taskCompletati... " />
+            <marker date="1515170593186" expanded="true" signature="406:429" ph="DELETE FROM membriTask... " />
+            <marker date="1515170593186" expanded="true" signature="406:442" ph="DELETE FROM membriTask... " />
+            <marker date="1515170593186" expanded="true" signature="406:443" ph="DELETE FROM membriTask... " />
+            <marker date="1515170593186" expanded="true" signature="406:455" ph="DELETE FROM membriTask... " />
+            <marker date="1515170593186" expanded="true" signature="406:466" ph="DELETE FROM membriTask... " />
+            <marker date="1515170593186" expanded="true" signature="406:476" ph="DELETE FROM membriTask... " />
+            <marker date="1515170593186" expanded="true" signature="428:429" ph="INSERT INTO taskCompletati... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/invio-ore/invio-ore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="24" column="93" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/convalida-ore-lista/convalida-ore-lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="87" lean-forward="false" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
           <folding />
         </state>
       </provider>

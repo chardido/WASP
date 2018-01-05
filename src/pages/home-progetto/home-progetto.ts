@@ -2,7 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {SelezionaprogettoPage} from "../selezionaprogetto/selezionaprogetto";
+import {Headers, Http, RequestOptions} from "@angular/http";
 import { Chart } from 'chart.js';
+import {WelcomePage} from "../welcome/welcome";
 
 
 /**
@@ -23,16 +25,22 @@ export class HomeProgettoPage {
   @ViewChild('doughnutCanvas') doughnutCanvas;
   @ViewChild('lineCanvas') lineCanvas;
 
+  private progetto: { costo: string, ricavo: string, giorni: string};
 
   nomeProgetto: string;
   codiceProgetto: string;
+  userPm: string;
+  arr: number[]=[];
 
   barChart: any;
   doughnutChart: any;
   lineChart: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http) {
 
+      this.storage.get('username').then((name) => {
+         this.userPm = name;
+      });
 
     this.storage.get('progetto').then((progetto) => {
       this.nomeProgetto = progetto;
@@ -40,6 +48,7 @@ export class HomeProgettoPage {
 
     this.storage.get('codProgetto').then((codice) => {
       this.codiceProgetto = codice;
+      this.chiamataPost();
     });
 
 
@@ -50,7 +59,34 @@ export class HomeProgettoPage {
 
   }
 
-  ionViewDidLoad() {
+    chiamataPost(){
+        var headers = new Headers();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json' );
+        headers.append('Access-Control-Allow-Origin' , '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        let options = new RequestOptions({ headers:headers});
+
+        let postParams = {
+            codice: this.codiceProgetto
+        }
+
+        this.http.post("http://localhost:8888/WASP/apiSpeseERicaviGiornalieri.php", postParams, options).map(res => res.json())
+            .subscribe(data => {
+                this.progetto = data;
+                this.arr.push(parseInt(this.progetto.costo));
+                this.arr.push(parseInt(this.progetto.ricavo));
+                this.doughnutChart.update();
+                console.log("Giorni: " + this.progetto.giorni);
+                //console.log(this.doughnutChart.data);
+                //console.log(this.progetto);
+            }, error => {
+                console.log(error);// Error getting the data
+            });
+    }
+
+
+    ionViewDidEnter(){
     /*
 
     this.barChart = new Chart(this.barCanvas.nativeElement, {
@@ -101,7 +137,7 @@ export class HomeProgettoPage {
         labels: ["Spese", "Ricavi"],
         datasets: [{
           label: 'Spese/Ricavi',
-          data: [2500, 3600],
+          data: this.arr,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)'

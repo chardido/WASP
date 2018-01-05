@@ -17,11 +17,13 @@ export class DettaglioTaskPage {
   attivita: string;
   dataInizio: string;
   nomeProgetto: string;
+  oreComunicate: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.nomeProgetto = this.navParams.get("nomeProgetto");
     this.attivita = this.navParams.get("attivita");
     this.dataInizio = this.navParams.get("dataInizio");
+    this.oreComunicate = this.navParams.get("oreComunicate");
   }
 
 

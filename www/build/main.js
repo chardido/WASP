@@ -1,4 +1,4 @@
-webpackJsonp([19],{
+webpackJsonp([20],{
 
 /***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -10,8 +10,9 @@ webpackJsonp([19],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_progetto_home_progetto__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,6 +22,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -105,6 +107,7 @@ var AggiungimemberPage = (function () {
             .subscribe(function (data) {
             if (data['_body'] == 1) {
                 alert.present();
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__home_progetto_home_progetto__["a" /* HomeProgettoPage */]);
                 console.log("Aggiungo: " + username + " al progetto: " + _this.progetto.nome);
             }
             else {
@@ -119,9 +122,10 @@ var AggiungimemberPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-aggiungimember',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/aggiungimember/aggiungimember.html"*/'<!--\n  Generated template for the AggiungimemberPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Aggiungi Team Member</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content>\n  <ion-searchbar placeholder="Cerca Utente Per Username" (ionInput)="getItems($event)"></ion-searchbar>\n\n  <div padding>\n    <p text-center>\n      Aggiungi un Team Member al tuo progetto!\n    </p>\n\n    <ion-list>\n      <button ion-item (click)="aggiungiUtente(utente.username)" *ngFor="let utente of utenti">\n        <h2> <strong>{{ utente.username | uppercase}} </strong></h2>\n       <h3 class="alto"> {{ utente.nome }} {{utente.cognome}} </h3>\n      </button>\n    </ion-list>\n\n  </div>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/aggiungimember/aggiungimember.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _e || Object])
     ], AggiungimemberPage);
     return AggiungimemberPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=aggiungimember.js.map
@@ -185,6 +189,7 @@ var AssegnaTaskPersonaPage = (function () {
         this.http.post("http://localhost:8888/WASP/apiListaMembriAssociatiAlProgetto.php", postParams, options).map(function (res) { return res.json(); })
             .subscribe(function (data) {
             _this.utenti = data;
+            console.log(_this.utenti);
         }, function (error) {
             console.log(error); // Error getting the data
         });
@@ -197,7 +202,7 @@ var AssegnaTaskPersonaPage = (function () {
             buttons: ['Continua']
         });
         var alertError = this.alertControl.create({
-            title: username.toUpperCase() + ' è già associato ad un Task!',
+            title: (username).toUpperCase() + ' è già associato a questo Task!',
             buttons: ['OK']
         });
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
@@ -229,9 +234,10 @@ var AssegnaTaskPersonaPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-assegna-task-persona',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/assegna-task-persona/assegna-task-persona.html"*/'<!--\n  Generated template for the AssegnaTaskPersonaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Assegna Task</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Seleziona il Team Member a cui assegnare il task <strong>{{nomeTask}}</strong>\n  </p>\n  <br>\n\n  <ion-list>\n    <button ion-item (click)="assegnaTask(utente.user)" *ngFor="let utente of utenti">\n      <h2> <strong>{{ utente.nome | uppercase}} {{utente.cognome | uppercase}} </strong></h2>\n      <h3> {{ utente.user | uppercase}} </h3>\n      <h4> Costo giornaliero: <strong>{{ utente.costo }}€</strong></h4>\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/assegna-task-persona/assegna-task-persona.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _e || Object])
     ], AssegnaTaskPersonaPage);
     return AssegnaTaskPersonaPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=assegna-task-persona.js.map
@@ -249,7 +255,7 @@ var AssegnaTaskPersonaPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -322,9 +328,10 @@ var AssegnaTaskPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-assegna-task',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/assegna-task/assegna-task.html"*/'<!--\n  Generated template for the AssegnaTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Assegna task</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n<p text-center>\n  Seleziona il task da assegnare tra quelli disponibili\n</p>\n  <br>\n  <ion-list>\n    <button ion-item (click)="assegnaTask(task.attivita, task.wbs)" *ngFor="let task of tasks">\n      <h2> <strong>{{ task.attivita}} </strong></h2>\n      <h3> {{ task.dataInizio | date:"medium" }} </h3>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/assegna-task/assegna-task.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], AssegnaTaskPage);
     return AssegnaTaskPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=assegna-task.js.map
@@ -335,11 +342,137 @@ var AssegnaTaskPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConvalidaOreListaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the ConvalidaOreListaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ConvalidaOreListaPage = (function () {
+    function ConvalidaOreListaPage(navCtrl, navParams, storage, alertControl, http) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.alertControl = alertControl;
+        this.http = http;
+        this.storage.get('codProgetto').then(function (codice) {
+            _this.codiceProgetto = codice;
+            _this.chiamataPost();
+        });
+    }
+    ConvalidaOreListaPage.prototype.chiamataPost = function () {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postParams = {
+            codice: this.codiceProgetto
+        };
+        this.http.post("http://localhost:8888/WASP/apiListaOreComunicate.php", postParams, options).map(function (res) { return res.json(); })
+            .subscribe(function (data) {
+            _this.oreInviate = data;
+        }, function (error) {
+            console.log(error); // Error getting the data
+        });
+    };
+    ConvalidaOreListaPage.prototype.convalidaOre = function (userUtente, ore, attivita, idTask) {
+        var _this = this;
+        var alert = this.alertControl.create({
+            title: 'Convalida Ore',
+            message: userUtente + " ha dichiarato <strong>" + ore + "</strong> ore per il task: " + attivita + ". <br> Vuoi convalidargliele?",
+            buttons: [
+                {
+                    text: 'Convalida',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Convalida');
+                        _this.chiamataPostConvalida(idTask, userUtente, attivita);
+                    }
+                },
+                {
+                    text: 'Non convalidare',
+                    handler: function () {
+                        console.log('Non convalida');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    ConvalidaOreListaPage.prototype.chiamataPostConvalida = function (idTask, user, attivita) {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postParams = {
+            idTask: idTask,
+            user: user
+        };
+        this.http.post("http://localhost:8888/WASP/apiConvalidaOre.php", postParams, options).map(function (res) { return res.json(); })
+            .subscribe(function (data) {
+            if (data['_body'] == 1) {
+                var alert = _this.alertControl.create({
+                    title: 'Ore Convalidate!',
+                    subTitle: 'Ore convalidate per il task ' + attivita + '.',
+                    buttons: ['Ok']
+                });
+                alert.present();
+            }
+            else {
+                console.log("Errore convalida");
+            }
+        }, function (error) {
+            console.log(error); // Error getting the data
+        });
+    };
+    ConvalidaOreListaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-convalida-ore-lista',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/convalida-ore-lista/convalida-ore-lista.html"*/'<!--\n  Generated template for the ConvalidaOreListaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-navbar>\n  <button ion-button menuToggle>\n    <ion-icon name="menu"></ion-icon>\n  </button>\n  <ion-title>Convalida Ore</ion-title>\n</ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Seleziona il task e convalida le ore.\n  </p>\n  <br>\n  <ion-list>\n    <button (click)="convalidaOre(ore.user, ore.oreComunicate, ore.attivita, ore.idTask)" ion-item *ngFor="let ore of oreInviate">\n      <h2>{{ore.user | uppercase}}</h2>\n      <h4>Attivit&agrave;: <strong>{{ore.attivita}}</strong></h4>\n      <h6>Ore inviate: {{ore.oreComunicate}}</h6>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/convalida-ore-lista/convalida-ore-lista.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _e || Object])
+    ], ConvalidaOreListaPage);
+    return ConvalidaOreListaPage;
+    var _a, _b, _c, _d, _e;
+}());
+
+//# sourceMappingURL=convalida-ore-lista.js.map
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreaProgettoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_progetto_home_progetto__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_progetto_home_progetto__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -402,16 +535,17 @@ var CreaProgettoPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-crea-progetto',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/crea-progetto/crea-progetto.html"*/'<!--\n  Generated template for the CreaProgettoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Crea Progetto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Inserisci il nome del progetto <br>\n    Successivamente recati alla <a href="www.google.it">pagina</a> e importa il progetto in formato XML.\n  </p>\n  <form (ngSubmit)="creaProgetto()" style="margin-top: 50px;!important;">\n    <ion-item>\n      <ion-label>Nome progetto</ion-label>\n      <ion-input type="text" [(ngModel)]="nomeProgetto" name="nome"></ion-input>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Crea progetto</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/crea-progetto/crea-progetto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], CreaProgettoPage);
     return CreaProgettoPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=crea-progetto.js.map
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -421,7 +555,7 @@ var CreaProgettoPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_progetto_home_progetto__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_progetto_home_progetto__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -494,16 +628,17 @@ var CreaTaskPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-crea-task',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/crea-task/crea-task.html"*/'<!--\n  Generated template for the CreaTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Crea task</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<p text-center>\n  Riempi i campi sottostanti e aggiungi un nuovo task al progetto.\n</p>\n\n  <form (ngSubmit)="creaTask()">\n    <ion-item>\n      <ion-label>Nome</ion-label>\n      <ion-textarea [(ngModel)]="task.attivita" name="attivita" placeholder="Inserisci nome attività"></ion-textarea>\n    </ion-item>\n    <ion-item>\n      <ion-label>Data Inizio</ion-label>\n      <ion-datetime displayFormat="MM DD YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="task.dataInizio" name="dataInizio" >\n      </ion-datetime>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Crea Task</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/crea-task/crea-task.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _e || Object])
     ], CreaTaskPage);
     return CreaTaskPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=crea-task.js.map
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -534,21 +669,23 @@ var DettaglioTaskPage = (function () {
         this.nomeProgetto = this.navParams.get("nomeProgetto");
         this.attivita = this.navParams.get("attivita");
         this.dataInizio = this.navParams.get("dataInizio");
+        this.oreComunicate = this.navParams.get("oreComunicate");
     }
     DettaglioTaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dettaglio-task',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/dettaglio-task/dettaglio-task.html"*/'<!--\n  Generated template for the DettaglioTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ attivita }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <h2 text-center="">Dettaglio task</h2>\n    <ion-item>\n      <h4> Progetto <span float-right><strong>{{ nomeProgetto | uppercase}} </strong></span></h4>\n    </ion-item>\n    <ion-item>\n      <h4> Attivita <span float-right><strong>{{ attivita | uppercase}} </strong></span></h4>\n    </ion-item>\n    <ion-item>\n      <h4>Data Inizio <span float-right><strong>{{ dataInizio | date:"medium"}}</strong></span></h4>\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/dettaglio-task/dettaglio-task.html"*/,
+            selector: 'page-dettaglio-task',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/dettaglio-task/dettaglio-task.html"*/'<!--\n  Generated template for the DettaglioTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ attivita }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <h2 text-center="">Dettaglio task</h2>\n    <ion-item>\n      <h4> Progetto <span float-right><strong>{{ nomeProgetto | uppercase}} </strong></span></h4>\n    </ion-item>\n    <ion-item>\n      <h4> Attivita <span float-right><strong>{{ attivita | uppercase}} </strong></span></h4>\n    </ion-item>\n    <ion-item>\n      <h4>Data Inizio <span float-right><strong>{{ dataInizio | date:"medium"}}</strong></span></h4>\n    </ion-item>\n    <h2 text-center="" [hidden]="!oreComunicate">Task Completato</h2>\n    <ion-item [hidden]="!oreComunicate">\n      <h4> Ore Comunicate <span float-right><strong>{{ oreComunicate | uppercase}} </strong></span></h4>\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/dettaglio-task/dettaglio-task.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object])
     ], DettaglioTaskPage);
     return DettaglioTaskPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=dettaglio-task.js.map
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -629,16 +766,17 @@ var LoginPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Accedi</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form (ngSubmit)="logForm()">\n    <ion-item>\n      <ion-label>Username</ion-label>\n      <ion-input type="text" [(ngModel)]="login.username" name="title"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Password</ion-label>\n      <ion-input type="password" [(ngModel)]="login.password" name="title"></ion-input>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Accedi</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]) === "function" && _e || Object])
     ], LoginPage);
     return LoginPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=login.js.map
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -719,23 +857,24 @@ var SignupPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-signup',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/signup/signup.html"*/'<!--\n  Generated template for the SignupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Registrati</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form (ngSubmit)="logForm()">\n    <ion-item>\n      <ion-label>Nome</ion-label>\n      <ion-input type="text" [(ngModel)]="signup.nome" name="nome"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Cognome</ion-label>\n      <ion-input type="text" [(ngModel)]="signup.cognome" name="cognome"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Username</ion-label>\n      <ion-input type="text" [(ngModel)]="signup.username" name="username"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Password</ion-label>\n      <ion-input type="password" [(ngModel)]="signup.password" name="password"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Tipo</ion-label>\n      <ion-select [(ngModel)]="signup.tipo" name="select">\n        <ion-option value="0">Project Manager</ion-option>\n        <ion-option value="1">Team Member</ion-option>\n      </ion-select>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Registrati</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/signup/signup.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]) === "function" && _e || Object])
     ], SignupPage);
     return SignupPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=signup.js.map
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InvioOreSelTaskPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invio_ore_invio_ore__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invio_ore_invio_ore__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -759,20 +898,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var InvioOreSelTaskPage = (function () {
-    function InvioOreSelTaskPage(navCtrl, navParams, storage, http) {
+    function InvioOreSelTaskPage(navCtrl, navParams, storage, http, alertControl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.storage = storage;
         this.http = http;
+        this.alertControl = alertControl;
         this.storage.get('username').then(function (name) {
             _this.username = name;
             _this.chiamataPost();
-            //console.log(this.username)
         });
     }
-    InvioOreSelTaskPage.prototype.inviaOre = function (task, idTask) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__invio_ore_invio_ore__["a" /* InvioOrePage */], { "task": task, "idTask": idTask });
+    InvioOreSelTaskPage.prototype.inviaOre = function (username, task, idTask, oreComunicate) {
+        if (oreComunicate == null) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__invio_ore_invio_ore__["a" /* InvioOrePage */], { "username": username, "task": task, "idTask": idTask });
+        }
+        else {
+            var alert = this.alertControl.create({
+                title: 'Ore già comunicate!',
+                subTitle: ' Ore comunicate al Project Manager: <strong>' + oreComunicate + '</strong>.<br/> In attesa di convalida.',
+                buttons: ['Ok']
+            });
+            alert.present();
+        }
         //console.log("Selezionato: "+task+ ", IdTask:" + idTask);
     };
     InvioOreSelTaskPage.prototype.chiamataPost = function () {
@@ -795,18 +944,19 @@ var InvioOreSelTaskPage = (function () {
     };
     InvioOreSelTaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-invio-ore-sel-task',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/invio-ore-sel-task/invio-ore-sel-task.html"*/'<!--\n  Generated template for the InvioOreSelTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Comunica ore</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Seleziona il task per la quale desideri comunicare le ore\n  </p>\n  <br>\n  <ion-list>\n    <button ion-item (click)="inviaOre(task.nome, task.idTask)" *ngFor="let task of tasks">\n      <h2> Progetto <strong>{{ task.nome}} </strong></h2>\n      <h3> <strong>{{ task.attivita }}</strong> </h3>\n      <h3> {{ task.dataInizio | date:"medium" }} </h3>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/invio-ore-sel-task/invio-ore-sel-task.html"*/,
+            selector: 'page-invio-ore-sel-task',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/invio-ore-sel-task/invio-ore-sel-task.html"*/'<!--\n  Generated template for the InvioOreSelTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Comunica ore</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Seleziona il task per la quale desideri comunicare le ore\n  </p>\n  <br>\n  <ion-list>\n    <button ion-item (click)="inviaOre(username ,task.nome, task.idTask, task.oreComunicate)" *ngFor="let task of tasks">\n      <h2> Progetto <strong>{{ task.nome}} </strong></h2>\n      <h3> <strong>{{ task.attivita }}</strong> <!--<span [hidden]="!task.oreComunicate" class="right">Ore già comunicate!</span>--></h3>\n      <h3> {{ task.dataInizio | date:"medium" }} </h3>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/invio-ore-sel-task/invio-ore-sel-task.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
     ], InvioOreSelTaskPage);
     return InvioOreSelTaskPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=invio-ore-sel-task.js.map
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -842,6 +992,7 @@ var InvioOrePage = (function () {
         this.http = http;
         this.taskSelezionato = this.navParams.get("task");
         this.idTaskSelezonato = this.navParams.get("idTask");
+        this.username = this.navParams.get("username");
     }
     InvioOrePage.prototype.comunicaOre = function () {
         var _this = this;
@@ -859,7 +1010,8 @@ var InvioOrePage = (function () {
             var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
             var postParams = {
                 idTask: this.idTaskSelezonato,
-                ore: this.oreInserite
+                ore: this.oreInserite,
+                user: this.username
             };
             this.http.post("http://localhost:8888/WASP/apiInviaOre.php", postParams, options)
                 .subscribe(function (data) {
@@ -875,16 +1027,17 @@ var InvioOrePage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-invio-ore',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/invio-ore/invio-ore.html"*/'<!--\n  Generated template for the InvioOrePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Comunica ore</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Inserisci le ore da comunicare al Project Manager\n  </p>\n  <form (ngSubmit)="comunicaOre()">\n    <ion-item>\n      <ion-label>Ore</ion-label>\n      <ion-input type="number" pattern="[0-9]*" [(ngModel)]="oreInserite" name="ore"></ion-input>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Comunica ore</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/invio-ore/invio-ore.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], InvioOrePage);
     return InvioOrePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=invio-ore.js.map
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -894,7 +1047,7 @@ var InvioOrePage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_progetto_home_progetto__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_progetto_home_progetto__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -975,16 +1128,17 @@ var ModificaBudgetPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-modifica-budget',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/modifica-budget/modifica-budget.html"*/'<!--\n  Generated template for the ModificaBudgetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Aggiorna Budget</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <p text-center>\n    Inserisci il nuovo budget per il progetto: <strong>{{nomeProgetto | uppercase}}</strong>\n  </p>\n\n  <form (ngSubmit)="modificaBudget()" style="margin-top: 50px;!important;">\n    <ion-item>\n      <ion-label>Budget</ion-label>\n      <ion-input type="number" pattern="[0-9]*" [(ngModel)]="nuovoBudget" name="budget"></ion-input>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Aggiorna Budget</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/modifica-budget/modifica-budget.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _e || Object])
     ], ModificaBudgetPage);
     return ModificaBudgetPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=modifica-budget.js.map
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -992,7 +1146,7 @@ var ModificaBudgetPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__visualizza_members_visualizza_members__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1056,26 +1210,27 @@ var ModificaRicavoRisorsaPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-modifica-ricavo-risorsa',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.html"*/'<!--\n  Generated template for the ModificaRicavoRisorsaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <ion-title>Aggiorna Ricavo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <form (ngSubmit)="modifica()" style="margin-top: 50px;!important;">\n    <ion-item>\n      <ion-label>Ricavo</ion-label>\n      <ion-input type="number" pattern="[0-9]*" [(ngModel)]="nuovoRicavo" name="ricavo"></ion-input>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Aggiorna Ricavo</button>\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], ModificaRicavoRisorsaPage);
     return ModificaRicavoRisorsaPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=modifica-ricavo-risorsa.js.map
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfiloMemberPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modifica_risorsa_modifica_risorsa__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modifica_ricavo_risorsa_modifica_ricavo_risorsa__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modifica_risorsa_modifica_risorsa__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modifica_ricavo_risorsa_modifica_ricavo_risorsa__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1118,8 +1273,6 @@ var ProfiloMemberPage = (function () {
             _this.chiamataPost();
         });
     }
-    ProfiloMemberPage.prototype.ionViewDidEnter = function () {
-    };
     ProfiloMemberPage.prototype.modificaCosto = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__modifica_risorsa_modifica_risorsa__["a" /* ModificaRisorsaPage */], { "nome": this.nomeMembro, "username": this.usernameMembro });
     };
@@ -1149,16 +1302,17 @@ var ProfiloMemberPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-profilo-member',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/profilo-member/profilo-member.html"*/'<!--\n  Generated template for the ProfiloMemberPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Team Members</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <h2>Informazioni</h2>\n    <ion-item>\n      <h4> Nome <span float-right><strong>{{ nomeMembro | uppercase}} </strong></span></h4>\n    </ion-item>\n    <ion-item>\n      <h4> Cognome <span float-right><strong>{{ cognomeMembro | uppercase }} </strong></span></h4>\n    </ion-item>\n    <button ion-item (click)="modificaCosto()">\n      <h4>Costo <span float-right><strong>{{ costoMembro }}€/gg</strong></span></h4>\n    </button>\n    <button ion-item (click)="modificaRicavo()">\n      <h4>Ricavo <span float-right><strong>{{ ricavoMembro }}€/gg</strong></span></h4>\n    </button>\n  </ion-list>\n\n  <h2>Task in corso</h2>\n  <ion-list>\n    <ion-item *ngFor="let task of tasks">\n      <h2>{{task.attivita | uppercase}}</h2>\n      <h4>Progetto: {{task.nome | uppercase}}</h4>\n      <h6>Iniziato: {{task.dataInizio | date:"medium"}}</h6>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/profilo-member/profilo-member.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], ProfiloMemberPage);
     return ProfiloMemberPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=profilo-member.js.map
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1166,7 +1320,7 @@ var ProfiloMemberPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__visualizza_members_visualizza_members__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1197,6 +1351,7 @@ var ModificaRisorsaPage = (function () {
         this.alertControl = alertControl;
         this.nomeMember = this.navParams.get("nome");
         this.usernameMember = this.navParams.get("username");
+        console.log("user: " + this.usernameMember);
     }
     ModificaRisorsaPage.prototype.modifica = function () {
         this.chiamataPost();
@@ -1230,16 +1385,17 @@ var ModificaRisorsaPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-modifica-risorsa',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/modifica-risorsa/modifica-risorsa.html"*/'<!--\n  Generated template for the ModificaRisorsaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <ion-title>Aggiorna Costo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <form (ngSubmit)="modifica()" style="margin-top: 50px;!important;">\n    <ion-item>\n      <ion-label>Costo</ion-label>\n      <ion-input type="number" pattern="[0-9]*" [(ngModel)]="nuovoCosto" name="costo"></ion-input>\n    </ion-item>\n    <br>\n    <button ion-button type="submit" block>Aggiorna Costo</button>\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/modifica-risorsa/modifica-risorsa.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], ModificaRisorsaPage);
     return ModificaRisorsaPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=modifica-risorsa.js.map
 
 /***/ }),
 
-/***/ 139:
+/***/ 140:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1252,93 +1408,93 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 139;
+webpackEmptyAsyncContext.id = 140;
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/aggiungimember/aggiungimember.module": [
-		472,
-		40
+		473,
+		19
 	],
 	"../pages/assegna-task-persona/assegna-task-persona.module": [
-		473,
-		39
+		474,
+		18
 	],
 	"../pages/assegna-task/assegna-task.module": [
-		474,
-		38
+		475,
+		17
 	],
 	"../pages/convalida-ore-lista/convalida-ore-lista.module": [
-		491,
-		21
+		476,
+		16
 	],
 	"../pages/crea-progetto/crea-progetto.module": [
-		475,
-		37
+		477,
+		15
 	],
 	"../pages/crea-task/crea-task.module": [
-		476,
-		36
+		478,
+		14
 	],
 	"../pages/dettaglio-task/dettaglio-task.module": [
-		477,
-		35
+		479,
+		13
 	],
 	"../pages/home-progetto/home-progetto.module": [
-		478,
-		34
+		480,
+		12
 	],
 	"../pages/home-tm/home-tm.module": [
-		479,
-		33
+		481,
+		11
 	],
 	"../pages/invio-ore-sel-task/invio-ore-sel-task.module": [
-		480,
-		32
+		482,
+		10
 	],
 	"../pages/invio-ore/invio-ore.module": [
-		481,
-		31
+		483,
+		9
 	],
 	"../pages/login/login.module": [
-		482,
-		30
+		484,
+		8
 	],
 	"../pages/modifica-budget/modifica-budget.module": [
-		483,
-		29
+		485,
+		7
 	],
 	"../pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.module": [
-		484,
-		28
+		486,
+		6
 	],
 	"../pages/modifica-risorsa/modifica-risorsa.module": [
-		485,
-		27
+		487,
+		5
 	],
 	"../pages/profilo-member/profilo-member.module": [
-		486,
-		26
+		488,
+		4
 	],
 	"../pages/selezionaprogetto/selezionaprogetto.module": [
-		487,
-		25
+		489,
+		3
 	],
 	"../pages/signup/signup.module": [
-		488,
-		24
+		490,
+		2
 	],
 	"../pages/visualizza-members/visualizza-members.module": [
-		489,
-		23
+		491,
+		1
 	],
 	"../pages/welcome/welcome.module": [
-		490,
-		22
+		492,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -1352,7 +1508,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 181;
+webpackAsyncContext.id = 182;
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -1365,9 +1521,9 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_progetto_home_progetto__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_progetto_home_progetto__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1421,195 +1577,17 @@ var SelezionaprogettoPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-selezionaprogetto',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/selezionaprogetto/selezionaprogetto.html"*/'<!--\n  Generated template for the SelezionaprogettoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Seleziona Progetto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <h3 text-center>Seleziona un progetto</h3>\n\n  <ion-list class="lista-progetti">\n    <ion-item (click)="apriProgetto(progetto.codice, progetto.nome)"  *ngFor="let progetto of progetti">\n      <button class="bottoni-progetto">{{progetto.nome}}</button>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/selezionaprogetto/selezionaprogetto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], SelezionaprogettoPage);
     return SelezionaprogettoPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=selezionaprogetto.js.map
 
 /***/ }),
 
-/***/ 345:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(369);
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
-
-/***/ }),
-
-/***/ 369:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(462);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(471);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_signup_signup__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_progetto_home_progetto__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_crea_progetto_crea_progetto__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_aggiungimember_aggiungimember__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_crea_task_crea_task__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_assegna_task_assegna_task__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_assegna_task_persona_assegna_task_persona__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_modifica_budget_modifica_budget__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_modifica_risorsa_modifica_risorsa__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_visualizza_members_visualizza_members__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_profilo_member_profilo_member__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_modifica_ricavo_risorsa_modifica_ricavo_risorsa__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_invio_ore_sel_task_invio_ore_sel_task__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_invio_ore_invio_ore__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_home_tm_home_tm__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_dettaglio_task_dettaglio_task__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_http__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var AppModule = (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__["a" /* WelcomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_selezionaprogetto_selezionaprogetto__["a" /* SelezionaprogettoPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_home_progetto_home_progetto__["a" /* HomeProgettoPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_crea_progetto_crea_progetto__["a" /* CreaProgettoPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_aggiungimember_aggiungimember__["a" /* AggiungimemberPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_crea_task_crea_task__["a" /* CreaTaskPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_assegna_task_assegna_task__["a" /* AssegnaTaskPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_assegna_task_persona_assegna_task_persona__["a" /* AssegnaTaskPersonaPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_modifica_budget_modifica_budget__["a" /* ModificaBudgetPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_modifica_risorsa_modifica_risorsa__["a" /* ModificaRisorsaPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_visualizza_members_visualizza_members__["a" /* VisualizzaMembersPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_profilo_member_profilo_member__["a" /* ProfiloMemberPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_modifica_ricavo_risorsa_modifica_ricavo_risorsa__["a" /* ModificaRicavoRisorsaPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_invio_ore_sel_task_invio_ore_sel_task__["a" /* InvioOreSelTaskPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_invio_ore_invio_ore__["a" /* InvioOrePage */],
-                __WEBPACK_IMPORTED_MODULE_23__pages_home_tm_home_tm__["a" /* HomeTmPage */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_dettaglio_task_dettaglio_task__["a" /* DettaglioTaskPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_28__angular_http__["c" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
-                    links: [
-                        { loadChildren: '../pages/aggiungimember/aggiungimember.module#AggiungimemberPageModule', name: 'AggiungimemberPage', segment: 'aggiungimember', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/assegna-task-persona/assegna-task-persona.module#AssegnaTaskPersonaPageModule', name: 'AssegnaTaskPersonaPage', segment: 'assegna-task-persona', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/assegna-task/assegna-task.module#AssegnaTaskPageModule', name: 'AssegnaTaskPage', segment: 'assegna-task', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/crea-progetto/crea-progetto.module#CreaProgettoPageModule', name: 'CreaProgettoPage', segment: 'crea-progetto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/crea-task/crea-task.module#CreaTaskPageModule', name: 'CreaTaskPage', segment: 'crea-task', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dettaglio-task/dettaglio-task.module#DettaglioTaskPageModule', name: 'DettaglioTaskPage', segment: 'dettaglio-task', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home-progetto/home-progetto.module#HomeProgettoPageModule', name: 'HomeProgettoPage', segment: 'home-progetto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home-tm/home-tm.module#HomeTmPageModule', name: 'HomeTmPage', segment: 'home-tm', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/invio-ore-sel-task/invio-ore-sel-task.module#InvioOreSelTaskPageModule', name: 'InvioOreSelTaskPage', segment: 'invio-ore-sel-task', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/invio-ore/invio-ore.module#InvioOrePageModule', name: 'InvioOrePage', segment: 'invio-ore', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modifica-budget/modifica-budget.module#ModificaBudgetPageModule', name: 'ModificaBudgetPage', segment: 'modifica-budget', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.module#ModificaRicavoRisorsaPageModule', name: 'ModificaRicavoRisorsaPage', segment: 'modifica-ricavo-risorsa', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modifica-risorsa/modifica-risorsa.module#ModificaRisorsaPageModule', name: 'ModificaRisorsaPage', segment: 'modifica-risorsa', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profilo-member/profilo-member.module#ProfiloMemberPageModule', name: 'ProfiloMemberPage', segment: 'profilo-member', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/selezionaprogetto/selezionaprogetto.module#SelezionaprogettoPageModule', name: 'SelezionaprogettoPage', segment: 'selezionaprogetto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/visualizza-members/visualizza-members.module#VisualizzaMembersPageModule', name: 'VisualizzaMembersPage', segment: 'visualizza-members', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
-                    ]
-                }),
-                __WEBPACK_IMPORTED_MODULE_27__ionic_storage__["a" /* IonicStorageModule */].forRoot()
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__["a" /* WelcomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_selezionaprogetto_selezionaprogetto__["a" /* SelezionaprogettoPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_home_progetto_home_progetto__["a" /* HomeProgettoPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_crea_progetto_crea_progetto__["a" /* CreaProgettoPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_aggiungimember_aggiungimember__["a" /* AggiungimemberPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_crea_task_crea_task__["a" /* CreaTaskPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_assegna_task_assegna_task__["a" /* AssegnaTaskPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_assegna_task_persona_assegna_task_persona__["a" /* AssegnaTaskPersonaPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_modifica_budget_modifica_budget__["a" /* ModificaBudgetPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_modifica_risorsa_modifica_risorsa__["a" /* ModificaRisorsaPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_visualizza_members_visualizza_members__["a" /* VisualizzaMembersPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_profilo_member_profilo_member__["a" /* ProfiloMemberPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_modifica_ricavo_risorsa_modifica_ricavo_risorsa__["a" /* ModificaRicavoRisorsaPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_invio_ore_sel_task_invio_ore_sel_task__["a" /* InvioOreSelTaskPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_invio_ore_invio_ore__["a" /* InvioOrePage */],
-                __WEBPACK_IMPORTED_MODULE_23__pages_home_tm_home_tm__["a" /* HomeTmPage */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_dettaglio_task_dettaglio_task__["a" /* DettaglioTaskPage */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
-            ]
-        })
-    ], AppModule);
-    return AppModule;
-}());
-
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 39:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1618,8 +1596,9 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(397);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js__ = __webpack_require__(398);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1634,6 +1613,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the HomeProgettoPage page.
  *
@@ -1641,22 +1621,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var HomeProgettoPage = (function () {
-    function HomeProgettoPage(navCtrl, navParams, storage) {
+    function HomeProgettoPage(navCtrl, navParams, storage, http) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.storage = storage;
+        this.http = http;
+        this.arr = [];
+        this.storage.get('username').then(function (name) {
+            _this.userPm = name;
+        });
         this.storage.get('progetto').then(function (progetto) {
             _this.nomeProgetto = progetto;
         });
         this.storage.get('codProgetto').then(function (codice) {
             _this.codiceProgetto = codice;
+            _this.chiamataPost();
         });
         this.nomeProgetto = navParams.get("nome");
         this.codiceProgetto = navParams.get("codice");
         setTimeout(this.checkProgettoSelezionato(), 1000);
     }
-    HomeProgettoPage.prototype.ionViewDidLoad = function () {
+    HomeProgettoPage.prototype.chiamataPost = function () {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        var options = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postParams = {
+            codice: this.codiceProgetto
+        };
+        this.http.post("http://localhost:8888/WASP/apiSpeseERicaviGiornalieri.php", postParams, options).map(function (res) { return res.json(); })
+            .subscribe(function (data) {
+            _this.progetto = data;
+            _this.arr.push(parseInt(_this.progetto.costo));
+            _this.arr.push(parseInt(_this.progetto.ricavo));
+            _this.doughnutChart.update();
+            console.log("Giorni: " + _this.progetto.giorni);
+            //console.log(this.doughnutChart.data);
+            //console.log(this.progetto);
+        }, function (error) {
+            console.log(error); // Error getting the data
+        });
+    };
+    HomeProgettoPage.prototype.ionViewDidEnter = function () {
         /*
     
         this.barChart = new Chart(this.barCanvas.nativeElement, {
@@ -1698,13 +1708,13 @@ var HomeProgettoPage = (function () {
     
         });
         */
-        this.doughnutChart = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.doughnutCanvas.nativeElement, {
+        this.doughnutChart = new __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"](this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {
                 labels: ["Spese", "Ricavi"],
                 datasets: [{
                         label: 'Spese/Ricavi',
-                        data: [2500, 3600],
+                        data: this.arr,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)'
@@ -1716,7 +1726,7 @@ var HomeProgettoPage = (function () {
                     }]
             }
         });
-        this.lineChart = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvas.nativeElement, {
+        this.lineChart = new __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"](this.lineCanvas.nativeElement, {
             type: 'line',
             data: {
                 labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
@@ -1796,14 +1806,199 @@ var HomeProgettoPage = (function () {
     ], HomeProgettoPage.prototype, "lineCanvas", void 0);
     HomeProgettoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home-progetto',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-progetto/home-progetto.html"*/'<!--\n  Generated template for the HomeProgettoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title> Dashboard - {{nomeProgetto}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content >\n<!--\n  <ion-card>\n    <ion-card-header>\n      Bar Chart\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #barCanvas></canvas>\n    </ion-card-content>\n  </ion-card>\n-->\n\n    <p text-center>\n        Codice Progetto: <span class="colora">{{codiceProgetto}}</span>\n    </p>\n\n  <ion-card>\n    <ion-card-header>\n      Spese e ricavi giornalieri\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #doughnutCanvas height="225px"></canvas>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Spese e ricavi mensili\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #lineCanvas height="225px"></canvas>\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-progetto/home-progetto.html"*/,
+            selector: 'page-home-progetto',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-progetto/home-progetto.html"*/'<!--\n  Generated template for the HomeProgettoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title> Dashboard - {{nomeProgetto}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content >\n<!--\n  <ion-card>\n    <ion-card-header>\n      Bar Chart\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #barCanvas></canvas>\n    </ion-card-content>\n  </ion-card>\n-->\n\n    <p text-center>\n        Codice Progetto: <span class="colora">{{codiceProgetto}}</span>\n    </p>\n\n  <ion-card>\n    <ion-card-header>\n      Spese/ricavi\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #doughnutCanvas height="225px"></canvas>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Spese e ricavi mensili\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #lineCanvas height="225px"></canvas>\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-progetto/home-progetto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], HomeProgettoPage);
     return HomeProgettoPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home-progetto.js.map
+
+/***/ }),
+
+/***/ 346:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(370);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 370:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(463);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_signup_signup__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_progetto_home_progetto__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_crea_progetto_crea_progetto__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_aggiungimember_aggiungimember__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_crea_task_crea_task__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_assegna_task_assegna_task__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_assegna_task_persona_assegna_task_persona__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_modifica_budget_modifica_budget__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_modifica_risorsa_modifica_risorsa__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_visualizza_members_visualizza_members__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_profilo_member_profilo_member__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_modifica_ricavo_risorsa_modifica_ricavo_risorsa__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_invio_ore_sel_task_invio_ore_sel_task__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_invio_ore_invio_ore__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_home_tm_home_tm__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_dettaglio_task_dettaglio_task__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_convalida_ore_lista_convalida_ore_lista__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_status_bar__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_splash_screen__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_http__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__["a" /* WelcomePage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_selezionaprogetto_selezionaprogetto__["a" /* SelezionaprogettoPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_home_progetto_home_progetto__["a" /* HomeProgettoPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_crea_progetto_crea_progetto__["a" /* CreaProgettoPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_aggiungimember_aggiungimember__["a" /* AggiungimemberPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_crea_task_crea_task__["a" /* CreaTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_assegna_task_assegna_task__["a" /* AssegnaTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_assegna_task_persona_assegna_task_persona__["a" /* AssegnaTaskPersonaPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_modifica_budget_modifica_budget__["a" /* ModificaBudgetPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_modifica_risorsa_modifica_risorsa__["a" /* ModificaRisorsaPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_visualizza_members_visualizza_members__["a" /* VisualizzaMembersPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_profilo_member_profilo_member__["a" /* ProfiloMemberPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_modifica_ricavo_risorsa_modifica_ricavo_risorsa__["a" /* ModificaRicavoRisorsaPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_invio_ore_sel_task_invio_ore_sel_task__["a" /* InvioOreSelTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_invio_ore_invio_ore__["a" /* InvioOrePage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_home_tm_home_tm__["a" /* HomeTmPage */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_dettaglio_task_dettaglio_task__["a" /* DettaglioTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_25__pages_convalida_ore_lista_convalida_ore_lista__["a" /* ConvalidaOreListaPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_29__angular_http__["c" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                    links: [
+                        { loadChildren: '../pages/aggiungimember/aggiungimember.module#AggiungimemberPageModule', name: 'AggiungimemberPage', segment: 'aggiungimember', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/assegna-task-persona/assegna-task-persona.module#AssegnaTaskPersonaPageModule', name: 'AssegnaTaskPersonaPage', segment: 'assegna-task-persona', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/assegna-task/assegna-task.module#AssegnaTaskPageModule', name: 'AssegnaTaskPage', segment: 'assegna-task', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/convalida-ore-lista/convalida-ore-lista.module#ConvalidaOreListaPageModule', name: 'ConvalidaOreListaPage', segment: 'convalida-ore-lista', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/crea-progetto/crea-progetto.module#CreaProgettoPageModule', name: 'CreaProgettoPage', segment: 'crea-progetto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/crea-task/crea-task.module#CreaTaskPageModule', name: 'CreaTaskPage', segment: 'crea-task', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dettaglio-task/dettaglio-task.module#DettaglioTaskPageModule', name: 'DettaglioTaskPage', segment: 'dettaglio-task', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home-progetto/home-progetto.module#HomeProgettoPageModule', name: 'HomeProgettoPage', segment: 'home-progetto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home-tm/home-tm.module#HomeTmPageModule', name: 'HomeTmPage', segment: 'home-tm', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/invio-ore-sel-task/invio-ore-sel-task.module#InvioOreSelTaskPageModule', name: 'InvioOreSelTaskPage', segment: 'invio-ore-sel-task', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/invio-ore/invio-ore.module#InvioOrePageModule', name: 'InvioOrePage', segment: 'invio-ore', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modifica-budget/modifica-budget.module#ModificaBudgetPageModule', name: 'ModificaBudgetPage', segment: 'modifica-budget', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modifica-ricavo-risorsa/modifica-ricavo-risorsa.module#ModificaRicavoRisorsaPageModule', name: 'ModificaRicavoRisorsaPage', segment: 'modifica-ricavo-risorsa', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modifica-risorsa/modifica-risorsa.module#ModificaRisorsaPageModule', name: 'ModificaRisorsaPage', segment: 'modifica-risorsa', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profilo-member/profilo-member.module#ProfiloMemberPageModule', name: 'ProfiloMemberPage', segment: 'profilo-member', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/selezionaprogetto/selezionaprogetto.module#SelezionaprogettoPageModule', name: 'SelezionaprogettoPage', segment: 'selezionaprogetto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/visualizza-members/visualizza-members.module#VisualizzaMembersPageModule', name: 'VisualizzaMembersPage', segment: 'visualizza-members', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_28__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__["a" /* WelcomePage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_selezionaprogetto_selezionaprogetto__["a" /* SelezionaprogettoPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_home_progetto_home_progetto__["a" /* HomeProgettoPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_crea_progetto_crea_progetto__["a" /* CreaProgettoPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_aggiungimember_aggiungimember__["a" /* AggiungimemberPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_crea_task_crea_task__["a" /* CreaTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_assegna_task_assegna_task__["a" /* AssegnaTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_assegna_task_persona_assegna_task_persona__["a" /* AssegnaTaskPersonaPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_modifica_budget_modifica_budget__["a" /* ModificaBudgetPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_modifica_risorsa_modifica_risorsa__["a" /* ModificaRisorsaPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_visualizza_members_visualizza_members__["a" /* VisualizzaMembersPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_profilo_member_profilo_member__["a" /* ProfiloMemberPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_modifica_ricavo_risorsa_modifica_ricavo_risorsa__["a" /* ModificaRicavoRisorsaPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_invio_ore_sel_task_invio_ore_sel_task__["a" /* InvioOreSelTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_invio_ore_invio_ore__["a" /* InvioOrePage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_home_tm_home_tm__["a" /* HomeTmPage */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_dettaglio_task_dettaglio_task__["a" /* DettaglioTaskPage */],
+                __WEBPACK_IMPORTED_MODULE_25__pages_convalida_ore_lista_convalida_ore_lista__["a" /* ConvalidaOreListaPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_26__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_27__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
 
 /***/ }),
 
@@ -1816,7 +2011,7 @@ var HomeProgettoPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__welcome_welcome__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dettaglio_task_dettaglio_task__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dettaglio_task_dettaglio_task__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1870,8 +2065,8 @@ var HomeTmPage = (function () {
             console.log(error); // Error getting the data
         });
     };
-    HomeTmPage.prototype.dettaglioTask = function (nomeProgetto, attivita, dataInizio) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__dettaglio_task_dettaglio_task__["a" /* DettaglioTaskPage */], { "nomeProgetto": nomeProgetto, "attivita": attivita, "dataInizio": dataInizio });
+    HomeTmPage.prototype.dettaglioTask = function (nomeProgetto, attivita, dataInizio, oreComunicate) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__dettaglio_task_dettaglio_task__["a" /* DettaglioTaskPage */], { "nomeProgetto": nomeProgetto, "attivita": attivita, "dataInizio": dataInizio, "oreComunicate": oreComunicate });
     };
     HomeTmPage.prototype.checkLogin = function () {
         var _this = this;
@@ -1888,251 +2083,252 @@ var HomeTmPage = (function () {
     };
     HomeTmPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home-tm',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-tm/home-tm.html"*/'<!--\n  Generated template for the HomeTmPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home TM</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h3 text-center>Benvenuto, {{username | uppercase}}</h3>\n  <hr/>\n\n  <h2>Notifiche</h2>\n  <ion-list>\n    <ion-item *ngFor="let notifica of notifiche">\n      <h2><strong>{{notifica.titolo}}</strong></h2>\n      <h4>{{notifica.descrizione}}</h4>\n      <h4>{{notifica.data}}</h4>\n    </ion-item>\n  </ion-list>\n\n  <h2>Task in corso</h2>\n  <ion-list>\n    <button (click)="dettaglioTask(task.nome, task.attivita, task.dataInizio)" ion-item *ngFor="let task of tasks">\n      <!--<h2><strong>Progetto {{task.nome}}</strong></h2>-->\n      <h2><strong>{{task.attivita}}</strong></h2>\n      <h4>{{task.dataInizio | date:"medium"}}</h4>\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-tm/home-tm.html"*/,
+            selector: 'page-home-tm',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-tm/home-tm.html"*/'<!--\n  Generated template for the HomeTmPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home TM</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h3 text-center>Benvenuto, {{username | uppercase}}</h3>\n  <hr/>\n\n  <h2>Notifiche</h2>\n  <ion-list>\n    <ion-item *ngFor="let notifica of notifiche">\n      <h2><strong>{{notifica.titolo}}</strong></h2>\n      <h4>{{notifica.descrizione}}</h4>\n      <h4>{{notifica.data}}</h4>\n    </ion-item>\n  </ion-list>\n\n  <h2>Task in corso</h2>\n  <ion-list>\n    <button (click)="dettaglioTask(task.nome, task.attivita, task.dataInizio, task.oreComunicate)" ion-item *ngFor="let task of tasks">\n      <!--<h2><strong>Progetto {{task.nome}}</strong></h2>-->\n      <h2><strong>{{task.attivita}}</strong></h2>\n      <h4>{{task.dataInizio | date:"medium"}}</h4>\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/home-tm/home-tm.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], HomeTmPage);
     return HomeTmPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home-tm.js.map
 
 /***/ }),
 
-/***/ 427:
+/***/ 428:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 187,
-	"./af.js": 187,
-	"./ar": 188,
-	"./ar-dz": 189,
-	"./ar-dz.js": 189,
-	"./ar-kw": 190,
-	"./ar-kw.js": 190,
-	"./ar-ly": 191,
-	"./ar-ly.js": 191,
-	"./ar-ma": 192,
-	"./ar-ma.js": 192,
-	"./ar-sa": 193,
-	"./ar-sa.js": 193,
-	"./ar-tn": 194,
-	"./ar-tn.js": 194,
-	"./ar.js": 188,
-	"./az": 195,
-	"./az.js": 195,
-	"./be": 196,
-	"./be.js": 196,
-	"./bg": 197,
-	"./bg.js": 197,
-	"./bn": 198,
-	"./bn.js": 198,
-	"./bo": 199,
-	"./bo.js": 199,
-	"./br": 200,
-	"./br.js": 200,
-	"./bs": 201,
-	"./bs.js": 201,
-	"./ca": 202,
-	"./ca.js": 202,
-	"./cs": 203,
-	"./cs.js": 203,
-	"./cv": 204,
-	"./cv.js": 204,
-	"./cy": 205,
-	"./cy.js": 205,
-	"./da": 206,
-	"./da.js": 206,
-	"./de": 207,
-	"./de-at": 208,
-	"./de-at.js": 208,
-	"./de-ch": 209,
-	"./de-ch.js": 209,
-	"./de.js": 207,
-	"./dv": 210,
-	"./dv.js": 210,
-	"./el": 211,
-	"./el.js": 211,
-	"./en-au": 212,
-	"./en-au.js": 212,
-	"./en-ca": 213,
-	"./en-ca.js": 213,
-	"./en-gb": 214,
-	"./en-gb.js": 214,
-	"./en-ie": 215,
-	"./en-ie.js": 215,
-	"./en-nz": 216,
-	"./en-nz.js": 216,
-	"./eo": 217,
-	"./eo.js": 217,
-	"./es": 218,
-	"./es-do": 219,
-	"./es-do.js": 219,
-	"./es.js": 218,
-	"./et": 220,
-	"./et.js": 220,
-	"./eu": 221,
-	"./eu.js": 221,
-	"./fa": 222,
-	"./fa.js": 222,
-	"./fi": 223,
-	"./fi.js": 223,
-	"./fo": 224,
-	"./fo.js": 224,
-	"./fr": 225,
-	"./fr-ca": 226,
-	"./fr-ca.js": 226,
-	"./fr-ch": 227,
-	"./fr-ch.js": 227,
-	"./fr.js": 225,
-	"./fy": 228,
-	"./fy.js": 228,
-	"./gd": 229,
-	"./gd.js": 229,
-	"./gl": 230,
-	"./gl.js": 230,
-	"./gom-latn": 231,
-	"./gom-latn.js": 231,
-	"./he": 232,
-	"./he.js": 232,
-	"./hi": 233,
-	"./hi.js": 233,
-	"./hr": 234,
-	"./hr.js": 234,
-	"./hu": 235,
-	"./hu.js": 235,
-	"./hy-am": 236,
-	"./hy-am.js": 236,
-	"./id": 237,
-	"./id.js": 237,
-	"./is": 238,
-	"./is.js": 238,
-	"./it": 239,
-	"./it.js": 239,
-	"./ja": 240,
-	"./ja.js": 240,
-	"./jv": 241,
-	"./jv.js": 241,
-	"./ka": 242,
-	"./ka.js": 242,
-	"./kk": 243,
-	"./kk.js": 243,
-	"./km": 244,
-	"./km.js": 244,
-	"./kn": 245,
-	"./kn.js": 245,
-	"./ko": 246,
-	"./ko.js": 246,
-	"./ky": 247,
-	"./ky.js": 247,
-	"./lb": 248,
-	"./lb.js": 248,
-	"./lo": 249,
-	"./lo.js": 249,
-	"./lt": 250,
-	"./lt.js": 250,
-	"./lv": 251,
-	"./lv.js": 251,
-	"./me": 252,
-	"./me.js": 252,
-	"./mi": 253,
-	"./mi.js": 253,
-	"./mk": 254,
-	"./mk.js": 254,
-	"./ml": 255,
-	"./ml.js": 255,
-	"./mr": 256,
-	"./mr.js": 256,
-	"./ms": 257,
-	"./ms-my": 258,
-	"./ms-my.js": 258,
-	"./ms.js": 257,
-	"./my": 259,
-	"./my.js": 259,
-	"./nb": 260,
-	"./nb.js": 260,
-	"./ne": 261,
-	"./ne.js": 261,
-	"./nl": 262,
-	"./nl-be": 263,
-	"./nl-be.js": 263,
-	"./nl.js": 262,
-	"./nn": 264,
-	"./nn.js": 264,
-	"./pa-in": 265,
-	"./pa-in.js": 265,
-	"./pl": 266,
-	"./pl.js": 266,
-	"./pt": 267,
-	"./pt-br": 268,
-	"./pt-br.js": 268,
-	"./pt.js": 267,
-	"./ro": 269,
-	"./ro.js": 269,
-	"./ru": 270,
-	"./ru.js": 270,
-	"./sd": 271,
-	"./sd.js": 271,
-	"./se": 272,
-	"./se.js": 272,
-	"./si": 273,
-	"./si.js": 273,
-	"./sk": 274,
-	"./sk.js": 274,
-	"./sl": 275,
-	"./sl.js": 275,
-	"./sq": 276,
-	"./sq.js": 276,
-	"./sr": 277,
-	"./sr-cyrl": 278,
-	"./sr-cyrl.js": 278,
-	"./sr.js": 277,
-	"./ss": 279,
-	"./ss.js": 279,
-	"./sv": 280,
-	"./sv.js": 280,
-	"./sw": 281,
-	"./sw.js": 281,
-	"./ta": 282,
-	"./ta.js": 282,
-	"./te": 283,
-	"./te.js": 283,
-	"./tet": 284,
-	"./tet.js": 284,
-	"./th": 285,
-	"./th.js": 285,
-	"./tl-ph": 286,
-	"./tl-ph.js": 286,
-	"./tlh": 287,
-	"./tlh.js": 287,
-	"./tr": 288,
-	"./tr.js": 288,
-	"./tzl": 289,
-	"./tzl.js": 289,
-	"./tzm": 290,
-	"./tzm-latn": 291,
-	"./tzm-latn.js": 291,
-	"./tzm.js": 290,
-	"./uk": 292,
-	"./uk.js": 292,
-	"./ur": 293,
-	"./ur.js": 293,
-	"./uz": 294,
-	"./uz-latn": 295,
-	"./uz-latn.js": 295,
-	"./uz.js": 294,
-	"./vi": 296,
-	"./vi.js": 296,
-	"./x-pseudo": 297,
-	"./x-pseudo.js": 297,
-	"./yo": 298,
-	"./yo.js": 298,
-	"./zh-cn": 299,
-	"./zh-cn.js": 299,
-	"./zh-hk": 300,
-	"./zh-hk.js": 300,
-	"./zh-tw": 301,
-	"./zh-tw.js": 301
+	"./af": 188,
+	"./af.js": 188,
+	"./ar": 189,
+	"./ar-dz": 190,
+	"./ar-dz.js": 190,
+	"./ar-kw": 191,
+	"./ar-kw.js": 191,
+	"./ar-ly": 192,
+	"./ar-ly.js": 192,
+	"./ar-ma": 193,
+	"./ar-ma.js": 193,
+	"./ar-sa": 194,
+	"./ar-sa.js": 194,
+	"./ar-tn": 195,
+	"./ar-tn.js": 195,
+	"./ar.js": 189,
+	"./az": 196,
+	"./az.js": 196,
+	"./be": 197,
+	"./be.js": 197,
+	"./bg": 198,
+	"./bg.js": 198,
+	"./bn": 199,
+	"./bn.js": 199,
+	"./bo": 200,
+	"./bo.js": 200,
+	"./br": 201,
+	"./br.js": 201,
+	"./bs": 202,
+	"./bs.js": 202,
+	"./ca": 203,
+	"./ca.js": 203,
+	"./cs": 204,
+	"./cs.js": 204,
+	"./cv": 205,
+	"./cv.js": 205,
+	"./cy": 206,
+	"./cy.js": 206,
+	"./da": 207,
+	"./da.js": 207,
+	"./de": 208,
+	"./de-at": 209,
+	"./de-at.js": 209,
+	"./de-ch": 210,
+	"./de-ch.js": 210,
+	"./de.js": 208,
+	"./dv": 211,
+	"./dv.js": 211,
+	"./el": 212,
+	"./el.js": 212,
+	"./en-au": 213,
+	"./en-au.js": 213,
+	"./en-ca": 214,
+	"./en-ca.js": 214,
+	"./en-gb": 215,
+	"./en-gb.js": 215,
+	"./en-ie": 216,
+	"./en-ie.js": 216,
+	"./en-nz": 217,
+	"./en-nz.js": 217,
+	"./eo": 218,
+	"./eo.js": 218,
+	"./es": 219,
+	"./es-do": 220,
+	"./es-do.js": 220,
+	"./es.js": 219,
+	"./et": 221,
+	"./et.js": 221,
+	"./eu": 222,
+	"./eu.js": 222,
+	"./fa": 223,
+	"./fa.js": 223,
+	"./fi": 224,
+	"./fi.js": 224,
+	"./fo": 225,
+	"./fo.js": 225,
+	"./fr": 226,
+	"./fr-ca": 227,
+	"./fr-ca.js": 227,
+	"./fr-ch": 228,
+	"./fr-ch.js": 228,
+	"./fr.js": 226,
+	"./fy": 229,
+	"./fy.js": 229,
+	"./gd": 230,
+	"./gd.js": 230,
+	"./gl": 231,
+	"./gl.js": 231,
+	"./gom-latn": 232,
+	"./gom-latn.js": 232,
+	"./he": 233,
+	"./he.js": 233,
+	"./hi": 234,
+	"./hi.js": 234,
+	"./hr": 235,
+	"./hr.js": 235,
+	"./hu": 236,
+	"./hu.js": 236,
+	"./hy-am": 237,
+	"./hy-am.js": 237,
+	"./id": 238,
+	"./id.js": 238,
+	"./is": 239,
+	"./is.js": 239,
+	"./it": 240,
+	"./it.js": 240,
+	"./ja": 241,
+	"./ja.js": 241,
+	"./jv": 242,
+	"./jv.js": 242,
+	"./ka": 243,
+	"./ka.js": 243,
+	"./kk": 244,
+	"./kk.js": 244,
+	"./km": 245,
+	"./km.js": 245,
+	"./kn": 246,
+	"./kn.js": 246,
+	"./ko": 247,
+	"./ko.js": 247,
+	"./ky": 248,
+	"./ky.js": 248,
+	"./lb": 249,
+	"./lb.js": 249,
+	"./lo": 250,
+	"./lo.js": 250,
+	"./lt": 251,
+	"./lt.js": 251,
+	"./lv": 252,
+	"./lv.js": 252,
+	"./me": 253,
+	"./me.js": 253,
+	"./mi": 254,
+	"./mi.js": 254,
+	"./mk": 255,
+	"./mk.js": 255,
+	"./ml": 256,
+	"./ml.js": 256,
+	"./mr": 257,
+	"./mr.js": 257,
+	"./ms": 258,
+	"./ms-my": 259,
+	"./ms-my.js": 259,
+	"./ms.js": 258,
+	"./my": 260,
+	"./my.js": 260,
+	"./nb": 261,
+	"./nb.js": 261,
+	"./ne": 262,
+	"./ne.js": 262,
+	"./nl": 263,
+	"./nl-be": 264,
+	"./nl-be.js": 264,
+	"./nl.js": 263,
+	"./nn": 265,
+	"./nn.js": 265,
+	"./pa-in": 266,
+	"./pa-in.js": 266,
+	"./pl": 267,
+	"./pl.js": 267,
+	"./pt": 268,
+	"./pt-br": 269,
+	"./pt-br.js": 269,
+	"./pt.js": 268,
+	"./ro": 270,
+	"./ro.js": 270,
+	"./ru": 271,
+	"./ru.js": 271,
+	"./sd": 272,
+	"./sd.js": 272,
+	"./se": 273,
+	"./se.js": 273,
+	"./si": 274,
+	"./si.js": 274,
+	"./sk": 275,
+	"./sk.js": 275,
+	"./sl": 276,
+	"./sl.js": 276,
+	"./sq": 277,
+	"./sq.js": 277,
+	"./sr": 278,
+	"./sr-cyrl": 279,
+	"./sr-cyrl.js": 279,
+	"./sr.js": 278,
+	"./ss": 280,
+	"./ss.js": 280,
+	"./sv": 281,
+	"./sv.js": 281,
+	"./sw": 282,
+	"./sw.js": 282,
+	"./ta": 283,
+	"./ta.js": 283,
+	"./te": 284,
+	"./te.js": 284,
+	"./tet": 285,
+	"./tet.js": 285,
+	"./th": 286,
+	"./th.js": 286,
+	"./tl-ph": 287,
+	"./tl-ph.js": 287,
+	"./tlh": 288,
+	"./tlh.js": 288,
+	"./tr": 289,
+	"./tr.js": 289,
+	"./tzl": 290,
+	"./tzl.js": 290,
+	"./tzm": 291,
+	"./tzm-latn": 292,
+	"./tzm-latn.js": 292,
+	"./tzm.js": 291,
+	"./uk": 293,
+	"./uk.js": 293,
+	"./ur": 294,
+	"./ur.js": 294,
+	"./uz": 295,
+	"./uz-latn": 296,
+	"./uz-latn.js": 296,
+	"./uz.js": 295,
+	"./vi": 297,
+	"./vi.js": 297,
+	"./x-pseudo": 298,
+	"./x-pseudo.js": 298,
+	"./yo": 299,
+	"./yo.js": 299,
+	"./zh-cn": 300,
+	"./zh-cn.js": 300,
+	"./zh-hk": 301,
+	"./zh-hk.js": 301,
+	"./zh-tw": 302,
+	"./zh-tw.js": 302
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -2148,32 +2344,33 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 427;
+webpackContext.id = 428;
 
 /***/ }),
 
-/***/ 462:
+/***/ 463:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(345);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_welcome_welcome__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_progetto_home_progetto__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_crea_progetto_crea_progetto__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_progetto_home_progetto__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_crea_progetto_crea_progetto__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_aggiungimember_aggiungimember__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_crea_task_crea_task__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_crea_task_crea_task__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_assegna_task_assegna_task__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modifica_budget_modifica_budget__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modifica_budget_modifica_budget__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_visualizza_members_visualizza_members__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_invio_ore_sel_task_invio_ore_sel_task__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_invio_ore_sel_task_invio_ore_sel_task__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_home_tm_home_tm__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_convalida_ore_lista_convalida_ore_lista__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2183,6 +2380,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2217,6 +2415,7 @@ var MyApp = (function () {
             { title: 'Assegna Task', component: __WEBPACK_IMPORTED_MODULE_11__pages_assegna_task_assegna_task__["a" /* AssegnaTaskPage */], icon: 'ios-person-add-outline' },
             { title: 'Visualizza Members', component: __WEBPACK_IMPORTED_MODULE_13__pages_visualizza_members_visualizza_members__["a" /* VisualizzaMembersPage */], icon: 'ios-people-outline' },
             { title: 'Aggiorna Budget', component: __WEBPACK_IMPORTED_MODULE_12__pages_modifica_budget_modifica_budget__["a" /* ModificaBudgetPage */], icon: 'ios-cash-outline' },
+            { title: 'Convalida Ore', component: __WEBPACK_IMPORTED_MODULE_17__pages_convalida_ore_lista_convalida_ore_lista__["a" /* ConvalidaOreListaPage */], icon: 'ios-clock-outline' },
         ];
         this.pagesProgettoTM = [
             { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_15__pages_home_tm_home_tm__["a" /* HomeTmPage */], icon: 'ios-home-outline' },
@@ -2301,7 +2500,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 471:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2422,8 +2621,8 @@ var HomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_tm_home_tm__ = __webpack_require__(40);
@@ -2493,11 +2692,11 @@ var WelcomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VisualizzaMembersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profilo_member_profilo_member__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profilo_member_profilo_member__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__selezionaprogetto_selezionaprogetto__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2545,7 +2744,7 @@ var VisualizzaMembersPage = (function () {
         var postParams = {
             codice: this.codiceProgetto,
         };
-        this.http.post("http://localhost:8888/WASP/apiListaMembriAssociatiAlProgetto.php", postParams, options).map(function (res) { return res.json(); })
+        this.http.post("http://localhost:8888/WASP/apiVisualizzaMember.php", postParams, options).map(function (res) { return res.json(); })
             .subscribe(function (data) {
             _this.utenti = data;
         }, function (error) {
@@ -2569,14 +2768,15 @@ var VisualizzaMembersPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-visualizza-members',template:/*ion-inline-start:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/visualizza-members/visualizza-members.html"*/'<!--\n  Generated template for the VisualizzaMembersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Team Members</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <p text-center>\n    Seleziona un membro per visualizzarne le informazioni.\n  </p>\n<br>\n  <ion-list>\n    <button ion-item (click)="selezionaPersona(utente.cognome, utente.nome, utente.posizione, utente.costo, utente.ricavo, utente.user)" *ngFor="let utente of utenti">\n      <h2> <strong>{{ utente.nome | uppercase}} {{utente.cognome | uppercase}} </strong></h2>\n      <h3 *ngIf="utente.posizione"> <strong>Team Member</strong></h3>\n      <h4> Costo giornaliero: <strong>{{ utente.costo }}€</strong></h4>\n      <h4> Ricavo giornaliero: <strong>{{ utente.ricavo }}€</strong></h4>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/umbertopicariello/Documents/GitHub/WASP/src/pages/visualizza-members/visualizza-members.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _d || Object])
     ], VisualizzaMembersPage);
     return VisualizzaMembersPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=visualizza-members.js.map
 
 /***/ })
 
-},[345]);
+},[346]);
 //# sourceMappingURL=main.js.map

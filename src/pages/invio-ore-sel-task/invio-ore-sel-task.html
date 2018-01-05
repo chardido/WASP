@@ -21,9 +21,9 @@
   </p>
   <br>
   <ion-list>
-    <button ion-item (click)="inviaOre(task.nome, task.idTask)" *ngFor="let task of tasks">
+    <button ion-item (click)="inviaOre(username ,task.nome, task.idTask, task.oreComunicate)" *ngFor="let task of tasks">
       <h2> Progetto <strong>{{ task.nome}} </strong></h2>
-      <h3> <strong>{{ task.attivita }}</strong> </h3>
+      <h3> <strong>{{ task.attivita }}</strong> <!--<span [hidden]="!task.oreComunicate" class="right">Ore già comunicate!</span>--></h3>
       <h3> {{ task.dataInizio | date:"medium" }} </h3>
     </button>
   </ion-list>

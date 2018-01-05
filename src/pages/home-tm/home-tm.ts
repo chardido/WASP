@@ -19,7 +19,7 @@ import {Headers, Http, RequestOptions} from "@angular/http";
 })
 export class HomeTmPage {
   private username: string;
-  private tasks: { nome: string, attivita: string, dataInizio: string}[];
+  private tasks: { nome: string, attivita: string, dataInizio: string, oreComunicate: number}[];
   private notifiche: { titolo: string, descrizione: string, data:string}[];
 
 
@@ -47,7 +47,7 @@ export class HomeTmPage {
             username: this.username
         }
 
-        this.http.post("http://localhost:80/WASP/apiTasksInCorsoTeamMember.php", postParams, options).map(res => res.json())
+        this.http.post("http://localhost:8888/WASP/apiTasksInCorsoTeamMember.php", postParams, options).map(res => res.json())
             .subscribe(data => {
                 this.tasks = data;
             }, error => {
@@ -55,8 +55,8 @@ export class HomeTmPage {
             });
     }
 
-  dettaglioTask(nomeProgetto: string, attivita: string, dataInizio: string){
-    this.navCtrl.push(DettaglioTaskPage, {"nomeProgetto":nomeProgetto, "attivita":attivita, "dataInizio":dataInizio});
+  dettaglioTask(nomeProgetto: string, attivita: string, dataInizio: string, oreComunicate){
+    this.navCtrl.push(DettaglioTaskPage, {"nomeProgetto":nomeProgetto, "attivita":attivita, "dataInizio":dataInizio, "oreComunicate":oreComunicate});
   }
 
   checkLogin(){

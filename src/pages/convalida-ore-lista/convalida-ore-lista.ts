@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import {Headers, Http, RequestOptions} from "@angular/http";
+import {HomeTmPage} from "../home-tm/home-tm";
+import {Storage} from "@ionic/storage";
 
 /**
  * Generated class for the ConvalidaOreListaPage page.
@@ -14,32 +17,51 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
   templateUrl: 'convalida-ore-lista.html',
 })
 export class ConvalidaOreListaPage {
-  private oreInviate: {nomeUtente: string, nomeAttivita: string, ore: number}[];
+  private oreInviate: {user: string, idTask: string, attivita: string, oreComunicate: number}[];
+  codiceProgetto: string;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public alertControl: AlertController, public http: Http) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-    this.oreInviate = [
-      {"nomeUtente": "Carlo Di Domenico", "nomeAttivita":"RAD", ore: 13},
-      {"nomeUtente": "Fabiano Pecorelli", "nomeAttivita":"SDD", ore: 9},
-      {"nomeUtente": "Umberto Picariello", "nomeAttivita":"ODD", ore: 10}
-    ];
+      this.storage.get('codProgetto').then((codice) => {
+          this.codiceProgetto = codice;
+          this.chiamataPost();
+      });
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ConvalidaOreListaPage');
+  chiamataPost(){
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/json' );
+      headers.append('Access-Control-Allow-Origin' , '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      let options = new RequestOptions({ headers:headers});
+
+      let postParams = {
+          codice: this.codiceProgetto
+      }
+
+      this.http.post("http://localhost:8888/WASP/apiListaOreComunicate.php", postParams, options).map(res => res.json())
+          .subscribe(data => {
+              this.oreInviate = data;
+          }, error => {
+              console.log(error);// Error getting the data
+          });
+
   }
 
 
-  convalidaOre(nomeUtente: string, ore: number) {
-    let alert = this.alertCtrl.create({
+  convalidaOre( userUtente: string, ore: number, attivita: string, idTask: string,) {
+    let alert = this.alertControl.create({
       title: 'Convalida Ore',
-      message: nomeUtente+" ha dichiarato "+ore+" ore. <br> Vuoi convalidargliele?",
+      message: userUtente+" ha dichiarato <strong>"+ore+"</strong> ore per il task: " + attivita +". <br> Vuoi convalidargliele?",
       buttons: [
         {
           text: 'Convalida',
           role: 'cancel',
           handler: () => {
             console.log('Convalida');
+            this.chiamataPostConvalida(idTask, userUtente, attivita);
           }
         },
         {
@@ -52,6 +74,38 @@ export class ConvalidaOreListaPage {
     });
     alert.present();
   }
+
+    chiamataPostConvalida(idTask: string, user: string, attivita: string){
+
+        var headers = new Headers();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json' );
+        headers.append('Access-Control-Allow-Origin' , '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        let options = new RequestOptions({ headers:headers});
+
+        let postParams = {
+            idTask: idTask,
+            user: user
+        }
+
+        this.http.post("http://localhost:8888/WASP/apiConvalidaOre.php", postParams, options).map(res => res.json())
+            .subscribe(data => {
+                if(data['_body']==1){
+                    let alert = this.alertControl.create({
+                        title: 'Ore Convalidate!',
+                        subTitle: 'Ore convalidate per il task '+ attivita+'.',
+                        buttons: ['Ok']
+                    });
+                    alert.present();
+                }else{
+                    console.log("Errore convalida");
+                }
+            }, error => {
+                console.log(error);// Error getting the data
+            });
+
+    }
 
 
 }

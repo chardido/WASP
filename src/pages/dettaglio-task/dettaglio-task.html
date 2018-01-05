@@ -26,6 +26,10 @@
     <ion-item>
       <h4>Data Inizio <span float-right><strong>{{ dataInizio | date:"medium"}}</strong></span></h4>
     </ion-item>
+    <h2 text-center="" [hidden]="!oreComunicate">Task Completato</h2>
+    <ion-item [hidden]="!oreComunicate">
+      <h4> Ore Comunicate <span float-right><strong>{{ oreComunicate | uppercase}} </strong></span></h4>
+    </ion-item>
 
   </ion-list>
 

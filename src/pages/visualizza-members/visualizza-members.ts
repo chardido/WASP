@@ -19,7 +19,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'visualizza-members.html',
 })
 export class VisualizzaMembersPage {
-  private utenti: { cognome: string, nome: string, username: string, posizione: number, costo: string, ricavo: string}[];
+  private utenti: { cognome: string, nome: string, user: string, posizione: number, costo: string, ricavo: string}[];
   codiceProgetto : string;
 
 
@@ -46,7 +46,7 @@ export class VisualizzaMembersPage {
           codice: this.codiceProgetto,
       }
 
-      this.http.post("http://localhost:8888/WASP/apiListaMembriAssociatiAlProgetto.php", postParams, options).map(res => res.json())
+      this.http.post("http://localhost:8888/WASP/apiListaMembriAssociatiAlProgettoPerTask.php", postParams, options).map(res => res.json())
           .subscribe(data => {
               this.utenti = data;
           }, error => {

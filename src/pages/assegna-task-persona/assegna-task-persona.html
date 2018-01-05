@@ -21,10 +21,10 @@
   <br>
 
   <ion-list>
-    <button ion-item (click)="assegnaTask(utente.username)" *ngFor="let utente of utenti">
+    <button ion-item (click)="assegnaTask(utente.user)" *ngFor="let utente of utenti">
       <h2> <strong>{{ utente.nome | uppercase}} {{utente.cognome | uppercase}} </strong></h2>
-      <h3> {{ utente.username | uppercase}} </h3>
-      <h4> Costo giornaliero: <strong>{{ utente.costoG }}€</strong></h4>
+      <h3> {{ utente.user | uppercase}} </h3>
+      <h4> Costo giornaliero: <strong>{{ utente.costo }}€</strong></h4>
     </button>
   </ion-list>
 

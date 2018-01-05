@@ -7,6 +7,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {HomePage} from "../home/home";
 import {HomeTmPage} from "../home-tm/home-tm";
+import {HomeProgettoPage} from "../home-progetto/home-progetto";
 
 /**
  * Generated class for the AggiungimemberPage page.
@@ -115,6 +116,7 @@ export class AggiungimemberPage {
           .subscribe(data => {
               if(data['_body']==1){
                   alert.present();
+                  this.navCtrl.setRoot(HomeProgettoPage);
                   console.log("Aggiungo: "+username+" al progetto: "+this.progetto.nome)
               }else{
                   alertError.present();

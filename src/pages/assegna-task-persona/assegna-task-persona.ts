@@ -16,7 +16,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'assegna-task-persona.html',
 })
 export class AssegnaTaskPersonaPage {
-  private utenti: { cognome: string, nome: string, username: string, costo: string}[];
+  private utenti: { cognome: string, nome: string, user: string, costo: string}[];
   nomeTask = this.navParams.get("nomeTask");
   codiceTask = this.navParams.get("codiceTask");
   codiceProgetto : string;
@@ -47,6 +47,7 @@ export class AssegnaTaskPersonaPage {
         this.http.post("http://localhost:8888/WASP/apiListaMembriAssociatiAlProgetto.php", postParams, options).map(res => res.json())
             .subscribe(data => {
                 this.utenti = data;
+                console.log(this.utenti);
             }, error => {
                 console.log(error);// Error getting the data
             });
@@ -61,7 +62,7 @@ export class AssegnaTaskPersonaPage {
     });
 
     let alertError = this.alertControl.create({
-      title: username.toUpperCase()+ ' è già associato ad un Task!',
+      title: (username).toUpperCase()+ ' è già associato a questo Task!',
       buttons: ['OK']
     });
 

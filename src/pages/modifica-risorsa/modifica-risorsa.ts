@@ -27,6 +27,8 @@ import {VisualizzaMembersPage} from "../visualizza-members/visualizza-members";
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public alertControl: AlertController) {
       this.nomeMember = this.navParams.get("nome");
       this.usernameMember = this.navParams.get("username");
+
+      console.log("user: " + this.usernameMember);
     }
 
     modifica(){

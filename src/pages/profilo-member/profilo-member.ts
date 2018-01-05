@@ -44,10 +44,6 @@ export class ProfiloMemberPage {
 
   }
 
-    ionViewDidEnter(){
-
-    }
-
   modificaCosto(){
     this.navCtrl.push(ModificaRisorsaPage, {"nome":this.nomeMembro, "username":this.usernameMembro});
   }

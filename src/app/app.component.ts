@@ -17,6 +17,7 @@ import { InvioOreSelTaskPage } from '../pages/invio-ore-sel-task/invio-ore-sel-t
 import { HomeTmPage } from '../pages/home-tm/home-tm';
 import { HomePage } from "../pages/home/home";
 import { ConvalidaOreListaPage } from "../pages/convalida-ore-lista/convalida-ore-lista";
+import { VisualizzaTaskPage } from "../pages/visualizza-task/visualizza-task";
 
 export interface PageInterface {
   title: string;
@@ -45,17 +46,18 @@ export class MyApp {
     { title: 'Visualizza Members', component: VisualizzaMembersPage, icon: 'ios-people-outline'},
     { title: 'Aggiorna Budget', component: ModificaBudgetPage, icon: 'ios-cash-outline'},
     { title: 'Convalida Ore', component: ConvalidaOreListaPage, icon: 'ios-clock-outline'},
+    { title: 'Visualizza Tasks', component: VisualizzaTaskPage, icon: 'ios-list-outline'}
   ];
 
   pagesProgettoTM: PageInterface[] = [
     { title: 'Home', component: HomeTmPage, icon: 'ios-home-outline'},
-    { title: 'Comunica ore', component: InvioOreSelTaskPage, icon: 'ios-time-outline'},
+    { title: 'Comunica ore', component: InvioOreSelTaskPage, icon: 'ios-time-outline'}
   ];
 
   pagesGenerale: PageInterface[] = [
     { title: 'Home', component: HomePage, icon: 'ios-home-outline'},
     { title: 'Crea Progetto', component: CreaProgettoPage, icon: 'ios-add-outline'},
-    { title: 'Seleziona Progetto', component: SelezionaprogettoPage, icon: 'ios-list-box-outline'},
+    { title: 'Seleziona Progetto', component: SelezionaprogettoPage, icon: 'ios-list-box-outline'}
   ];
 
   pagesImpostazioni = [

@@ -46,7 +46,11 @@ export class VisualizzaMembersPage {
           codice: this.codiceProgetto,
       }
 
+<<<<<<< HEAD
       this.http.post("http://localhost:8888/WASP/apiVisualizzaMember.php", postParams, options).map(res => res.json())
+=======
+      this.http.post("http://localhost:80/WASP/apiListaMembriAssociatiAlProgetto.php", postParams, options).map(res => res.json())
+>>>>>>> ce83fb261b7527765cf0dfd77095ae3b37714f32
           .subscribe(data => {
               this.utenti = data;
           }, error => {

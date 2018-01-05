@@ -25,6 +25,8 @@ import { InvioOrePage } from '../pages/invio-ore/invio-ore';
 import { HomeTmPage } from '../pages/home-tm/home-tm';
 import { DettaglioTaskPage } from "../pages/dettaglio-task/dettaglio-task";
 import { ConvalidaOreListaPage } from "../pages/convalida-ore-lista/convalida-ore-lista";
+import { VisualizzaTaskPage } from "../pages/visualizza-task/visualizza-task";
+import { VisualizzaAssociatiTaskPage } from "../pages/visualizza-associati-task/visualizza-associati-task";
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -58,7 +60,9 @@ import { HttpModule } from '@angular/http';
       InvioOrePage,
       HomeTmPage,
       DettaglioTaskPage,
-      ConvalidaOreListaPage
+      ConvalidaOreListaPage,
+      VisualizzaTaskPage,
+      VisualizzaAssociatiTaskPage
   ],
   imports: [
     HttpModule,
@@ -90,7 +94,9 @@ import { HttpModule } from '@angular/http';
       InvioOrePage,
       HomeTmPage,
       DettaglioTaskPage,
-      ConvalidaOreListaPage
+      ConvalidaOreListaPage,
+      VisualizzaTaskPage,
+      VisualizzaAssociatiTaskPage
   ],
   providers: [
     StatusBar,
